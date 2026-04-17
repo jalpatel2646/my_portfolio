@@ -128,17 +128,27 @@ export default function About() {
                filter: 'blur(12px)',
                zIndex: -1
              }} />
-             <img
-               src="https://public-green-muuftfjyxm.edgeone.app/profliepic%20-%20Edited.jpg"
-               alt="Jal Patel Profile"
+             <motion.div
                style={{
                  width: '100%',
                  height: '100%',
-                 objectFit: 'cover',
+                 overflow: 'hidden',
                  borderRadius: 16,
-                 display: 'block'
                }}
-             />
+             >
+               <motion.img
+                 src="https://res.cloudinary.com/diipavxsd/image/upload/f_auto,q_auto/Gemini_Generated_Image_1hwauc1hwauc1hwa_fk4tyr"
+                 alt="Jal Patel Profile"
+                 whileHover={{ scale: 1.05 }}
+                 transition={{ duration: 0.4, ease: "easeOut" }}
+                 style={{
+                   width: '100%',
+                   height: '100%',
+                   objectFit: 'cover',
+                   display: 'block'
+                 }}
+               />
+             </motion.div>
            </motion.div>
           </motion.div>
         </motion.div>
