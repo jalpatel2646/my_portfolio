@@ -107,7 +107,7 @@ export default function Hero() {
           </svg>
         </a>
         <a
-          href="https://drive.google.com/drive/folders/1kp_SYvE8aBINXo3h9ld2jAjWJpqPZsO3"
+          href="https://drive.google.com/file/d/11FrD4PWLH7kD6iCc7F-v9ATXNa64ZTnx/preview"
           target="_blank"
           rel="noopener noreferrer"
           className="btn-hero-secondary"

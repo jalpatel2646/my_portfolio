@@ -104,7 +104,7 @@ function HackathonCard({ hackathon, index }) {
 
 export default function Hackathons() {
   return (
-    <SectionWrapper id="hackathons">
+    <SectionWrapper>
       <SectionLabel>Competitions</SectionLabel>
       <SectionTitle>
         <span className="gradient-text-blue">Hackathons</span>

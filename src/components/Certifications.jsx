@@ -38,7 +38,7 @@ const certifications = [
 
 export default function Certifications() {
   return (
-    <SectionWrapper id="certifications">
+    <SectionWrapper>
       <SectionLabel>Continuous Learning</SectionLabel>
       <SectionTitle>
         Certifi<span className="gradient-text-blue">cations</span>

@@ -5,12 +5,12 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
 import Skills from './components/Skills'
-import Education from './components/Education'
-import Certifications from './components/Certifications'
+import Experience from './components/Experience'
 import ProblemSolving from './components/ProblemSolving'
 import Projects from './components/Projects'
-import Hackathons from './components/Hackathons'
 import HackathonProjects from './components/HackathonProjects'
+import FigmaDesigns from './components/FigmaDesigns'
+import Achievements from './components/Achievements'
 import Contact from './components/Contact'
 
 function StarCanvas() {
@@ -151,12 +151,12 @@ export default function App() {
         <Hero />
         <About />
         <Skills />
-        <Education />
-        <Certifications />
+        <Experience />
         <ProblemSolving />
         <Projects />
-        <Hackathons />
         <HackathonProjects />
+        <FigmaDesigns />
+        <Achievements />
         <Contact />
       </div>
     </div>

@@ -20,7 +20,7 @@ const entries = [
 
 export default function Education() {
   return (
-    <SectionWrapper id="education">
+    <SectionWrapper>
       <SectionLabel>My Background</SectionLabel>
       <SectionTitle>
         Edu<span className="gradient-text-blue">cation</span>

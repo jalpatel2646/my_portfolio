@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import emailjs from '@emailjs/browser'
 import SectionWrapper, { SectionLabel, SectionTitle } from './SectionWrapper'
 
 const contactItems = [
@@ -12,17 +13,37 @@ const socials = [
   { label: 'LinkedIn', icon: 'in', href: 'https://www.linkedin.com/in/jal-patel-b7a4a7394/' },
   { label: 'GitHub', icon: '⌥', href: 'https://github.com/jalpatel2646' },
   { label: 'YouTube', icon: '▶', href: 'https://www.youtube.com/@JalPatel-f5l' },
+  { label: 'LeetCode', icon: '◧', href: 'https://leetcode.com/u/jall_patel/' },
+  { label: 'Twitter (X)', icon: '𝕏', href: 'https://x.com/JalPatel97246' },
 ]
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
-  const [sent, setSent] = useState(false)
+  const [status, setStatus] = useState('idle') // idle, loading, success, error
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setSent(true)
-    setTimeout(() => setSent(false), 3000)
-    setForm({ name: '', email: '', subject: '', message: '' })
+    setStatus('loading')
+
+    emailjs.send(
+      'service_7mduyca',
+      'template_xxxxxx',
+      {
+        name: form.name,
+        email: form.email,
+        subject: form.subject,
+        message: form.message,
+      },
+      'your_public_key_here'
+    ).then(() => {
+      setStatus('success')
+      setTimeout(() => setStatus('idle'), 3000)
+      setForm({ name: '', email: '', subject: '', message: '' })
+    }).catch((error) => {
+      console.error(error);
+      setStatus('error')
+      setTimeout(() => setStatus('idle'), 3000)
+    })
   }
 
   return (
@@ -144,10 +165,11 @@ export default function Contact() {
 
               <button
                 type="submit"
+                disabled={status === 'loading'}
                 className="btn-primary"
-                style={{ width: '100%', padding: '14px', fontSize: 15, textAlign: 'center' }}
+                style={{ width: '100%', padding: '14px', fontSize: 15, textAlign: 'center', opacity: status === 'loading' ? 0.7 : 1, cursor: status === 'loading' ? 'not-allowed' : 'pointer' }}
               >
-                {sent ? '✅ Message Sent!' : 'Send Message 🚀'}
+                {status === 'loading' ? 'Sending...' : status === 'success' ? '✅ Message Sent!' : status === 'error' ? 'Failed to send ❌' : 'Send Message 🚀'}
               </button>
             </form>
           </div>

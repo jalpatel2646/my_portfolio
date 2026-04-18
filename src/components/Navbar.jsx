@@ -4,11 +4,9 @@ import { motion } from 'framer-motion'
 const links = [
   { label: 'Home', href: '#hero', id: 'hero' },
   { label: 'About', href: '#about', id: 'about' },
-  { label: 'Skills & Tech', href: '#skills', id: 'skills' },
-  { label: 'Education', href: '#education', id: 'education' },
-  { label: 'Certifications', href: '#certifications', id: 'certifications' },
-  { label: 'Hackathons', href: '#hackathons', id: 'hackathons' },
+  { label: 'Skills', href: '#skills', id: 'skills' },
   { label: 'Projects', href: '#projects', id: 'projects' },
+  { label: 'Experience', href: '#experience', id: 'experience' },
   { label: 'Contact', href: '#contact', id: 'contact' },
 ]
 
@@ -99,9 +97,15 @@ export default function Navbar() {
 
         {/* Right */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <button className="btn-primary" style={{ padding: '8px 20px', fontSize: 13 }}>
+          <a
+            href="https://drive.google.com/file/d/11FrD4PWLH7kD6iCc7F-v9ATXNa64ZTnx/preview"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+            style={{ padding: '8px 20px', fontSize: 13, textDecoration: 'none' }}
+          >
             View Resume
-          </button>
+          </a>
           {/* Mobile hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}

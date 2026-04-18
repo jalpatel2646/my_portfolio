@@ -44,7 +44,9 @@ export default function Footer() {
             {[
               { icon: 'in', url: 'https://www.linkedin.com/in/jal-patel-b7a4a7394/' },
               { icon: '⌥', url: 'https://github.com/jalpatel2646' },
-              { icon: '▶', url: 'https://www.youtube.com/@JalPatel-f5l' }
+              { icon: '▶', url: 'https://www.youtube.com/@JalPatel-f5l' },
+              { icon: '◧', url: 'https://leetcode.com/u/jall_patel/' },
+              { icon: '𝕏', url: 'https://x.com/JalPatel97246' }
             ].map((social, i) => (
               <motion.a
                 key={i}
