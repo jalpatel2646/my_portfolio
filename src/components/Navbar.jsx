@@ -48,7 +48,7 @@ export default function Navbar() {
         transition: 'background 0.3s',
       }}
     >
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 32px', height: 72, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <div className="w-full max-w-none lg:max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20 h-[72px] flex items-center justify-between">
         {/* Logo */}
         <span className="font-poppins gradient-text-blue" style={{ fontSize: 22, fontWeight: 800, cursor: 'pointer' }} onClick={() => document.getElementById('hero').scrollIntoView({ behavior: 'smooth' })}>
           Jal.Patel
@@ -109,8 +109,8 @@ export default function Navbar() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#e2e8f0', fontSize: 22, display: 'none' }}
-            className="block md:hidden"
+            style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#e2e8f0', fontSize: 24, padding: '4px' }}
+            className="block md:hidden flex items-center justify-center focus:outline-none"
           >
             {menuOpen ? '✕' : '☰'}
           </button>
@@ -122,14 +122,16 @@ export default function Navbar() {
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          style={{ background: 'rgba(4,4,15,0.97)', borderTop: '1px solid rgba(255,255,255,0.08)', padding: '16px 24px' }}
+          style={{ background: 'rgba(4,4,15,0.97)', borderTop: '1px solid rgba(255,255,255,0.08)', padding: '16px 24px', position: 'absolute', top: 72, left: 0, width: '100%' }}
+          className="md:hidden flex flex-col shadow-xl backdrop-blur-lg"
         >
           {links.map(l => (
             <a
               key={l.label}
               href={l.href}
-              style={{ display: 'block', width: '100%', textAlign: 'left', color: '#e2e8f0', fontSize: 15, fontWeight: 500, padding: '10px 0', fontFamily: "'Inter', sans-serif", borderBottom: '1px solid rgba(255,255,255,0.05)', textDecoration: 'none' }}
+              style={{ display: 'block', width: '100%', textAlign: 'left', color: '#e2e8f0', fontSize: 16, fontWeight: 500, padding: '16px 12px', fontFamily: "'Inter', sans-serif", borderBottom: '1px solid rgba(255,255,255,0.05)', textDecoration: 'none' }}
               onClick={() => setMenuOpen(false)}
+              className="hover:bg-white/5 hover:text-cyan-400 transition-colors rounded-lg mb-1"
             >
               {l.label}
             </a>

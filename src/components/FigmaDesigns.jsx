@@ -201,13 +201,7 @@ export default function FigmaDesigns() {
         Crafting intuitive interfaces and exploring user experience patterns through Figma design systems and community kits.
       </p>
 
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
-          gap: 32,
-        }}
-      >
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {designs.map((design, i) => (
           <DesignCard key={design.title} design={design} index={i} />
         ))}

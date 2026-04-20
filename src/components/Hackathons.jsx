@@ -110,7 +110,7 @@ export default function Hackathons() {
         <span className="gradient-text-blue">Hackathons</span>
       </SectionTitle>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: 24, marginTop: 48 }}>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 w-full">
         {hackathons.map((h, i) => (
           <HackathonCard key={h.name} hackathon={h} index={i} />
         ))}

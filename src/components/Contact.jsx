@@ -53,7 +53,7 @@ export default function Contact() {
         Let's <span className="gradient-text-blue">Connect</span>
       </SectionTitle>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 40, marginTop: 48, alignItems: 'start' }}>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-12 items-start">
 
         {/* Info Card */}
         <motion.div
@@ -112,7 +112,7 @@ export default function Contact() {
 
             <form onSubmit={handleSubmit}>
               {/* Name + Email row */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 16 }}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                 {[
                   { field: 'name', label: 'Your Name', placeholder: 'John Doe', type: 'text' },
                   { field: 'email', label: 'Email Address', placeholder: 'john@example.com', type: 'email' },

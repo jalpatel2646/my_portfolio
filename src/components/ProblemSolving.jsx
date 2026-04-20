@@ -12,7 +12,7 @@ export default function ProblemSolving() {
         Problem <span className="gradient-text-blue">Solving</span>
       </SectionTitle>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px,1fr))', gap: 40, marginTop: 48, alignItems: 'center' }}>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-12 items-center">
 
         {/* LeetCode Card */}
         <motion.div
@@ -38,7 +38,7 @@ export default function ProblemSolving() {
           </div>
 
           {/* Easy / Medium / Hard */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, marginBottom: 24 }}>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
             {[
               { num: 14, label: 'Easy', color: '#68d391' },
               { num: 4, label: 'Medium', color: '#fbd38d' },
@@ -54,11 +54,13 @@ export default function ProblemSolving() {
           {/* Activity graph */}
           <div style={{ marginBottom: 20 }}>
             <div style={{ fontSize: 11, color: '#718096', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 8 }}>Activity</div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(24, 1fr)', gap: 3 }}>
+          <div className="overflow-x-auto pb-4">
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(24, 1fr)', gap: 3, minWidth: 600 }}>
               {activityData.map((v, i) => (
                 <div key={i} className={`graph-cell ${levelClass[v]}`} />
               ))}
             </div>
+          </div>
           </div>
 
           {/* Ranking */}

@@ -40,7 +40,7 @@ export default function About() {
         About <span className="gradient-text-blue">Me</span>
       </SectionTitle>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 60, alignItems: 'flex-start', marginTop: 48 }}>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-start mt-8 md:mt-12">
         {/* Text */}
         <motion.div
            initial={{ opacity: 0, x: -30 }}

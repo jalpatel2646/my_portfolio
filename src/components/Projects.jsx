@@ -162,7 +162,7 @@ function ProjectModal({ project, onClose }) {
           <h2 className="font-poppins gradient-text-cyan" style={{ fontSize: 36, fontWeight: 800, marginBottom: 12 }}>{project.name}</h2>
           <p style={{ color: '#94a3b8', fontSize: 16, marginBottom: 32, lineHeight: 1.6 }}>{project.desc}</p>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 32, marginBottom: 40 }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
             <div style={{ background: 'rgba(255,255,255,0.02)', padding: 24, borderRadius: 16, border: '1px solid rgba(255,255,255,0.05)' }}>
               <h3 className="font-poppins" style={{ color: '#0ea5e9', fontSize: 18, marginBottom: 12, fontWeight: 600 }}>The Problem</h3>
               <p style={{ color: '#cbd5e1', fontSize: 15, lineHeight: 1.7 }}>{project.problem}</p>
@@ -215,7 +215,7 @@ function ProjectCard({ project, onClick, featured = false }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       whileHover={{ y: -8, boxShadow: '0 24px 60px rgba(167,139,250,0.15)' }}
-      className="glass-card"
+      className={`glass-card flex ${featured ? 'lg:col-span-full flex-col lg:flex-row' : 'flex-col'}`}
       onClick={() => onClick(project)}
       style={{ 
         position: 'relative',
@@ -223,9 +223,6 @@ function ProjectCard({ project, onClick, featured = false }) {
         overflow: 'hidden', 
         cursor: 'pointer', 
         transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
-        display: featured ? 'flex' : 'block',
-        flexDirection: featured ? 'row' : 'column',
-        gridColumn: featured ? '1 / -1' : 'auto'
       }}
       onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(192,132,252,0.3)'}
       onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'}
@@ -358,7 +355,7 @@ export default function Projects() {
           ))}
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 32, marginTop: 48 }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-12">
           {filteredProjects.map((p, i) => (
             <ProjectCard 
               key={p.name} 

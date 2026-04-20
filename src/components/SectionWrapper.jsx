@@ -12,7 +12,8 @@ export default function SectionWrapper({ children, id, style = {} }) {
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-      style={{ padding: '100px 48px', maxWidth: 1280, margin: '0 auto', ...style }}
+      className={`w-full max-w-none lg:max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20 py-16 md:py-24`}
+      style={{ ...style }}
     >
       {children}
     </motion.section>

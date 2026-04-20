@@ -49,7 +49,7 @@ export default function Hero() {
   return (
     <section 
       id="hero" 
-      style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '120px 24px 80px', maxWidth: 860, margin: '0 auto', position: 'relative' }}
+      className="min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-10 lg:px-20 pt-32 pb-20 w-full max-w-none lg:max-w-4xl mx-auto relative"
     >
 
       {/* Available badge */}

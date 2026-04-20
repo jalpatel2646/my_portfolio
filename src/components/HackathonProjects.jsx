@@ -34,7 +34,7 @@ export default function HackathonProjects() {
         Projects built under pressure — from idea to deployment in hours. Fast, collaborative, and impactful.
       </p>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 32 }}>
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
         {hackathonProjects.map((project, i) => (
           <motion.div
             key={i}
@@ -88,7 +88,7 @@ export default function HackathonProjects() {
               </div>
 
               {/* Action Buttons */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <a href={project.live} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ padding: '10px 16px', fontSize: 13, textAlign: 'center', textDecoration: 'none' }}>
                   Live Demo
                 </a>

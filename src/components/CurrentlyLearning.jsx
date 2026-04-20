@@ -35,7 +35,7 @@ export default function CurrentlyLearning() {
         </p>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-10">
         {learningItems.map((item, index) => (
           <motion.div
             key={item.tech}

@@ -10,7 +10,7 @@ export default function Footer() {
 
   return (
     <footer style={{ borderTop: '1px solid rgba(255,255,255,0.07)', background: 'rgba(4,4,15,0.85)', backdropFilter: 'blur(20px)' }}>
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '40px 48px 28px' }}>
+      <div className="w-full max-w-none lg:max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20 pt-10 pb-7">
 
         {/* Top row */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 24, marginBottom: 32 }}>

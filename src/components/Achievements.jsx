@@ -27,7 +27,7 @@ export default function Achievements() {
         My <span className="gradient-text-cyan">Achievements</span>
       </SectionTitle>
       
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 32, marginTop: 48 }}>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
         {achievements.map((item, i) => (
           <motion.div
             key={item.title}
