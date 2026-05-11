@@ -130,6 +130,7 @@ function ProjectModal({ project, onClose }) {
         animate={{ y: 0, scale: 1 }}
         exit={{ y: 30, scale: 0.95 }}
         onClick={e => e.stopPropagation()}
+        className="project-modal-inner"
         style={{
           width: '100%',
           maxWidth: 900,
@@ -143,7 +144,7 @@ function ProjectModal({ project, onClose }) {
         }}
       >
         {/* Modal Header/Image */}
-        <div style={{ position: 'relative', height: 350, background: project.gradient, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+        <div className="project-modal-header" style={{ position: 'relative', height: 350, background: project.gradient, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', flexShrink: 0 }}>
           {project.image ? (
             <img src={project.image} alt={project.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
           ) : (
@@ -158,8 +159,8 @@ function ProjectModal({ project, onClose }) {
         </div>
 
         {/* Modal Body */}
-        <div style={{ padding: '40px' }}>
-          <h2 className="font-poppins gradient-text-cyan" style={{ fontSize: 36, fontWeight: 800, marginBottom: 12 }}>{project.name}</h2>
+        <div className="project-modal-body" style={{ padding: 'clamp(20px, 4vw, 40px)' }}>
+          <h2 className="font-poppins gradient-text-cyan" style={{ fontSize: 'clamp(22px,5vw,36px)', fontWeight: 800, marginBottom: 12 }}>{project.name}</h2>
           <p style={{ color: '#94a3b8', fontSize: 16, marginBottom: 32, lineHeight: 1.6 }}>{project.desc}</p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
@@ -334,7 +335,7 @@ export default function Projects() {
           Featured <span className="gradient-text-cyan">Projects</span>
         </SectionTitle>
 
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginTop: 32, justifyContent: 'center' }}>
+        <div className="project-filter-bar" style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginTop: 32, justifyContent: 'center' }}>
           {filters.map(filter => (
             <button
               key={filter}

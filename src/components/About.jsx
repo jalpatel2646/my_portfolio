@@ -55,7 +55,7 @@ export default function About() {
             From designing pixel-perfect interfaces to architecting robust back-end systems, I love every layer of the stack. I'm constantly learning, building, and growing — one commit at a time.
           </p>
 
-          <div style={{ display: 'flex', gap: 16, marginBottom: 32, flexWrap: 'wrap' }}>
+          <div className="about-social-grid" style={{ display: 'flex', gap: 12, marginBottom: 32, flexWrap: 'wrap' }}>
             {socials.map((social, i) => (
               <motion.a
                 key={social.name}
@@ -109,6 +109,7 @@ export default function About() {
           >
            <motion.div
              whileHover={{ scale: 1.02 }}
+             className="about-image-container"
              style={{
                position: 'relative',
                width: '100%',

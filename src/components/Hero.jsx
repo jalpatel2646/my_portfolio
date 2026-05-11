@@ -9,10 +9,10 @@ const phrases = [
 ]
 
 function TypingText() {
-  const [display, setDisplay] = useState('')
+  const [display,   setDisplay]   = useState('')
   const [phraseIdx, setPhraseIdx] = useState(0)
-  const [charIdx, setCharIdx] = useState(0)
-  const [deleting, setDeleting] = useState(false)
+  const [charIdx,   setCharIdx]   = useState(0)
+  const [deleting,  setDeleting]  = useState(false)
 
   useEffect(() => {
     const phrase = phrases[phraseIdx]
@@ -38,7 +38,7 @@ function TypingText() {
   }, [charIdx, deleting, phraseIdx])
 
   return (
-    <div className="font-inter" style={{ fontSize: 'clamp(18px,2.5vw,26px)', color: '#0ea5e9', marginBottom: 28, minHeight: 38, letterSpacing: '0.01em', fontWeight: 500 }}>
+    <div className="font-inter typing-text" style={{ fontSize: 'clamp(17px,2.5vw,26px)', color: '#0ea5e9', marginBottom: 28, minHeight: 38, letterSpacing: '0.01em', fontWeight: 500 }}>
       <span>{display}</span>
       <span className="cursor-blink" style={{ display: 'inline-block', width: 2, height: '1.1em', background: '#0ea5e9', marginLeft: 3, verticalAlign: 'text-bottom' }} />
     </div>
@@ -47,17 +47,24 @@ function TypingText() {
 
 export default function Hero() {
   return (
-    <section 
-      id="hero" 
-      className="min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-10 lg:px-20 pt-32 pb-20 w-full max-w-none lg:max-w-4xl mx-auto relative"
+    <section
+      id="hero"
+      className="min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-10 lg:px-20 pt-28 pb-20 w-full max-w-none lg:max-w-4xl mx-auto relative"
     >
-
       {/* Available badge */}
       <motion.div
         initial={{ opacity: 0, y: -16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1, duration: 0.6 }}
-        style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(14,165,233,0.08)', border: '1px solid rgba(14,165,233,0.25)', borderRadius: 100, padding: '6px 18px', fontSize: 12.5, fontWeight: 500, color: '#0ea5e9', letterSpacing: '0.06em', marginBottom: 32 }}
+        className="hero-badge"
+        style={{
+          display: 'inline-flex', alignItems: 'center', gap: 8,
+          background: 'rgba(14,165,233,0.08)',
+          border: '1px solid rgba(14,165,233,0.25)',
+          borderRadius: 100, padding: '6px 18px',
+          fontSize: 12.5, fontWeight: 500, color: '#0ea5e9',
+          letterSpacing: '0.06em', marginBottom: 32,
+        }}
       >
         <span className="pulse-dot" style={{ width: 7, height: 7, borderRadius: '50%', background: '#4ade80', display: 'inline-block' }} />
         Available for Work
@@ -69,7 +76,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.75 }}
         className="font-poppins"
-        style={{ fontSize: 'clamp(40px,7vw,82px)', fontWeight: 800, lineHeight: 1.06, letterSpacing: '-0.03em', marginBottom: 18 }}
+        style={{ fontSize: 'clamp(34px,7vw,82px)', fontWeight: 800, lineHeight: 1.06, letterSpacing: '-0.03em', marginBottom: 18 }}
       >
         Hello, I'm{' '}
         <span className="gradient-text-cyan">Jal Patel</span>
@@ -85,7 +92,8 @@ export default function Hero() {
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.55 }}
-        style={{ fontSize: 'clamp(15px,1.8vw,18px)', color: '#94a3b8', lineHeight: 1.85, maxWidth: 580, marginBottom: 44 }}
+        className="hero-desc"
+        style={{ fontSize: 'clamp(14px,1.8vw,18px)', color: '#94a3b8', lineHeight: 1.85, maxWidth: 560, marginBottom: 44, paddingLeft: 4, paddingRight: 4 }}
       >
         I craft digital experiences that merge creativity with code. From pixel‑perfect interfaces to robust back‑end systems — let's build something extraordinary together.
       </motion.p>
@@ -95,14 +103,12 @@ export default function Hero() {
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.65 }}
+        className="hero-cta-group"
         style={{ display: 'flex', gap: 16, flexWrap: 'wrap', justifyContent: 'center', position: 'relative', zIndex: 1 }}
       >
-        <a
-          href="#projects"
-          className="btn-hero-primary"
-        >
+        <a href="#projects" className="btn-hero-primary">
           View My Work
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: 8 }}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: 8, flexShrink: 0 }}>
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </a>
@@ -113,7 +119,7 @@ export default function Hero() {
           className="btn-hero-secondary"
         >
           View Resume
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: 8 }}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: 8, flexShrink: 0 }}>
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" />
           </svg>
         </a>
@@ -121,6 +127,7 @@ export default function Hero() {
 
       {/* Scroll cue */}
       <motion.div
+        className="scroll-cue"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}

@@ -62,34 +62,34 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="glass-card" style={{ borderRadius: 20, padding: 32 }}>
+          <div className="glass-card contact-card" style={{ borderRadius: 20, padding: 32 }}>
             <div className="font-poppins" style={{ fontSize: 22, fontWeight: 800, marginBottom: 24 }}>Jal Patel</div>
 
             {contactItems.map((item) => (
               <motion.div
                 key={item.label}
                 whileHover={{ borderColor: 'rgba(99,179,237,0.28)' }}
-                style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 14, padding: '13px 14px', background: 'rgba(255,255,255,0.03)', borderRadius: 12, border: '1px solid rgba(255,255,255,0.05)', transition: 'border-color 0.2s' }}
+                style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 14, padding: '13px 14px', background: 'rgba(255,255,255,0.03)', borderRadius: 12, border: '1px solid rgba(255,255,255,0.05)', transition: 'border-color 0.2s', overflow: 'hidden' }}
               >
                 <div style={{ width: 38, height: 38, borderRadius: 9, background: 'linear-gradient(135deg,rgba(102,126,234,0.18),rgba(183,148,244,0.12))', border: '1px solid rgba(102,126,234,0.22)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 17, flexShrink: 0 }}>
                   {item.icon}
                 </div>
-                <div>
+                <div style={{ minWidth: 0 }}>
                   <div style={{ fontSize: 11, color: '#718096', letterSpacing: '0.07em', textTransform: 'uppercase' }}>{item.label}</div>
-                  <div style={{ fontSize: 13.5, fontWeight: 500, marginTop: 2 }}>{item.value}</div>
+                  <div style={{ fontSize: 13.5, fontWeight: 500, marginTop: 2, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{item.value}</div>
                 </div>
               </motion.div>
             ))}
 
-            {/* Socials */}
-            <div style={{ display: 'flex', gap: 10, marginTop: 24 }}>
+            {/* Socials — 2-per-row on mobile via .social-buttons-grid */}
+            <div className="social-buttons-grid" style={{ display: 'flex', gap: 10, marginTop: 24, flexWrap: 'wrap' }}>
               {socials.map((s) => (
                 <a
                   key={s.label}
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, padding: '10px 8px', borderRadius: 10, fontSize: 12, fontWeight: 500, background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', color: '#718096', cursor: 'pointer', transition: 'all 0.2s', textDecoration: 'none', letterSpacing: '0.04em' }}
+                  style={{ flex: 1, minWidth: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, padding: '10px 6px', borderRadius: 10, fontSize: 12, fontWeight: 500, background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', color: '#718096', cursor: 'pointer', transition: 'all 0.2s', textDecoration: 'none', letterSpacing: '0.04em', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
                   onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(99,179,237,0.28)'; e.currentTarget.style.color = '#e2e8f0'; e.currentTarget.style.background = 'rgba(99,179,237,0.08)' }}
                   onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'; e.currentTarget.style.color = '#718096'; e.currentTarget.style.background = 'rgba(255,255,255,0.04)' }}
                 >
@@ -99,6 +99,7 @@ export default function Contact() {
             </div>
           </div>
         </motion.div>
+
 
         {/* Contact Form */}
         <motion.div

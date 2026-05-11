@@ -60,10 +60,11 @@ export default function Skills() {
 
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 24, paddingTop: 20 }}>
         {skillsMatrix.map((rowObj, rowIndex) => (
-          <div key={rowObj.row} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div key={rowObj.row} className="skills-row" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             {rowObj.skills.map((skill, idx) => (
               <React.Fragment key={skill.name}>
                 <motion.div
+                  className="skill-node"
                   initial={{ opacity: 0, y: 20, scale: 0.9 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   viewport={{ once: true, margin: '-40px' }}
@@ -104,6 +105,7 @@ export default function Skills() {
                 {/* Connecting Line or Spacer */}
                 {idx < rowObj.skills.length - 1 && (
                   <motion.div
+                    className="skill-connector"
                     initial={{ scaleX: 0, opacity: 0 }}
                     whileInView={{ scaleX: 1, opacity: 1 }}
                     viewport={{ once: true }}

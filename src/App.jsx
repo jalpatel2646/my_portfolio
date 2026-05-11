@@ -69,10 +69,11 @@ function StarCanvas() {
   return <canvas ref={canvasRef} id="stars-canvas" />
 }
 
-const FloatingShape = ({ delay, duration, style, size, color }) => (
+const FloatingShape = ({ delay, duration, style, size, color, className = '' }) => (
   <motion.div
-    animate={{ y: [0, -30, 0], x: [0, 15, 0], rotate: [0, 45, 0] }}
+    animate={{ y: [0, -20, 0], x: [0, 8, 0], rotate: [0, 30, 0] }}
     transition={{ repeat: Infinity, duration, delay, ease: 'easeInOut' }}
+    className={`floating-shape ${className}`}
     style={{
       position: 'fixed',
       pointerEvents: 'none',
@@ -86,6 +87,7 @@ const FloatingShape = ({ delay, duration, style, size, color }) => (
     }}
   />
 )
+
 
 export default function App() {
   const [loading, setLoading] = useState(true)
@@ -103,7 +105,16 @@ export default function App() {
   })
 
   return (
-    <div onMouseMove={handleMouseMove} style={{ background: '#04040f', minHeight: '100vh', position: 'relative' }}>
+    <div
+      onMouseMove={handleMouseMove}
+      style={{
+        background: '#04040f',
+        minHeight: '100vh',
+        position: 'relative',
+        overflowX: 'hidden',   /* prevent horizontal scroll from orbs/shapes */
+        width: '100%',
+      }}
+    >
       <AnimatePresence>
         {loading && <Loader setLoading={setLoading} />}
       </AnimatePresence>
@@ -133,18 +144,18 @@ export default function App() {
       />
       <StarCanvas />
 
-      {/* Floating orbs */}
+      {/* Floating orbs — clamped to viewport, no overflow */}
       <div className="orb fixed pointer-events-none"
-        style={{ width: 400, height: 400, borderRadius: '50%', background: 'radial-gradient(#667eea, transparent)', top: -100, left: -100, filter: 'blur(80px)', opacity: 0.12, zIndex: 0 }} />
+        style={{ width: 400, height: 400, borderRadius: '50%', background: 'radial-gradient(#667eea, transparent)', top: -100, left: -100, filter: 'blur(80px)', opacity: 0.12, zIndex: 0, maxWidth: '80vw', maxHeight: '80vw' }} />
       <div className="orb orb-delay-1 fixed pointer-events-none"
-        style={{ width: 350, height: 350, borderRadius: '50%', background: 'radial-gradient(#764ba2, transparent)', bottom: 100, right: -80, filter: 'blur(80px)', opacity: 0.12, zIndex: 0 }} />
+        style={{ width: 350, height: 350, borderRadius: '50%', background: 'radial-gradient(#764ba2, transparent)', bottom: 100, right: -60, filter: 'blur(80px)', opacity: 0.12, zIndex: 0, maxWidth: '80vw', maxHeight: '80vw' }} />
       <div className="orb orb-delay-2 fixed pointer-events-none"
         style={{ width: 250, height: 250, borderRadius: '50%', background: 'radial-gradient(#76e4f7, transparent)', top: '40%', left: '50%', filter: 'blur(80px)', opacity: 0.1, zIndex: 0 }} />
 
-      {/* Floating Particles */}
-      <FloatingShape size={60} color="#0ea5e9" delay={0} duration={8} style={{ top: '20%', left: '5%' }} />
-      <FloatingShape size={40} color="#63b3ed" delay={2} duration={12} style={{ top: '60%', right: '5%' }} />
-      <FloatingShape size={80} color="#22d3ee" delay={4} duration={10} style={{ bottom: '10%', left: '15%', borderRadius: '50%' }} />
+      {/* Floating Particles — kept inside viewport with max-width guard */}
+      <FloatingShape size={60} color="#0ea5e9" delay={0} duration={8}  style={{ top: '20%', left: '3%' }} />
+      <FloatingShape size={40} color="#63b3ed" delay={2} duration={12} style={{ top: '60%', right: '3%' }} />
+      <FloatingShape size={80} color="#22d3ee" delay={4} duration={10} style={{ bottom: '10%', left: '12%', borderRadius: '50%' }} />
 
       <div style={{ position: 'relative', zIndex: 1 }}>
         <Navbar />

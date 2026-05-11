@@ -12,13 +12,22 @@ export default function SectionWrapper({ children, id, style = {} }) {
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-      className={`w-full max-w-none lg:max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20 py-16 md:py-24`}
-      style={{ ...style }}
+      style={{
+        width: '100%',
+        maxWidth: 1280,
+        margin: '0 auto',
+        paddingLeft:   'clamp(16px, 5vw, 80px)',
+        paddingRight:  'clamp(16px, 5vw, 80px)',
+        paddingTop:    'clamp(56px, 8vw, 96px)',
+        paddingBottom: 'clamp(56px, 8vw, 96px)',
+        ...style
+      }}
     >
       {children}
     </motion.section>
   )
 }
+
 
 export function SectionLabel({ children }) {
   return (

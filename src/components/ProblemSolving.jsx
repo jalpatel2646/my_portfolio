@@ -33,7 +33,7 @@ export default function ProblemSolving() {
 
           {/* Total */}
           <div style={{ textAlign: 'center', marginBottom: 28 }}>
-            <div className="font-poppins gradient-text-blue" style={{ fontSize: 52, fontWeight: 800 }}>18</div>
+            <div className="font-poppins gradient-text-blue leetcode-total" style={{ fontSize: 52, fontWeight: 800 }}>18</div>
             <div style={{ fontSize: 13, color: '#718096', letterSpacing: '0.04em' }}>Total Problems Solved</div>
           </div>
 
@@ -54,7 +54,7 @@ export default function ProblemSolving() {
           {/* Activity graph */}
           <div style={{ marginBottom: 20 }}>
             <div style={{ fontSize: 11, color: '#718096', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 8 }}>Activity</div>
-          <div className="overflow-x-auto pb-4">
+          <div className="activity-graph-wrap overflow-x-auto pb-4">
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(24, 1fr)', gap: 3, minWidth: 600 }}>
               {activityData.map((v, i) => (
                 <div key={i} className={`graph-cell ${levelClass[v]}`} />
@@ -70,7 +70,7 @@ export default function ProblemSolving() {
         </motion.div>
 
         {/* Right text */}
-        <div style={{ paddingLeft: 12 }}>
+        <div className="problem-solving-text" style={{ paddingLeft: 12 }}>
           <h3 className="font-poppins" style={{ fontSize: 'clamp(22px,3vw,32px)', fontWeight: 800, letterSpacing: '-0.01em', lineHeight: 1.2, marginBottom: 18 }}>
             Consistency<br />is{' '}
             <span className="gradient-text-blue">Key</span>

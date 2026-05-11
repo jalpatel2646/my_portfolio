@@ -10,10 +10,10 @@ export default function Footer() {
 
   return (
     <footer style={{ borderTop: '1px solid rgba(255,255,255,0.07)', background: 'rgba(4,4,15,0.85)', backdropFilter: 'blur(20px)' }}>
-      <div className="w-full max-w-none lg:max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20 pt-10 pb-7">
+      <div style={{ maxWidth: 1280, margin: '0 auto', paddingLeft: 'clamp(16px, 5vw, 80px)', paddingRight: 'clamp(16px, 5vw, 80px)', paddingTop: 40, paddingBottom: 28 }}>
 
         {/* Top row */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 24, marginBottom: 32 }}>
+        <div className="footer-top" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 24, marginBottom: 32 }}>
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.04 }}
@@ -25,7 +25,7 @@ export default function Footer() {
           </motion.div>
 
           {/* Nav links */}
-          <nav style={{ display: 'flex', gap: 28, flexWrap: 'wrap' }}>
+          <nav className="footer-nav" style={{ display: 'flex', gap: 28, flexWrap: 'wrap' }}>
             {links.map(l => (
               <button
                 key={l}
@@ -68,7 +68,7 @@ export default function Footer() {
         <div style={{ height: 1, background: 'rgba(255,255,255,0.06)', marginBottom: 24 }} />
 
         {/* Bottom row */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
+        <div className="footer-bottom" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
           <p style={{ fontSize: 13, color: '#4a5568' }}>
             © {new Date().getFullYear()} <span style={{ color: '#718096' }}>Jal Patel</span>. All rights reserved.
           </p>
