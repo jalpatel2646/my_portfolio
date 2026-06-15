@@ -1,3 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /assets/
+
+# Main sitemap location
 Sitemap: https://jalpatel.vercel.app/sitemap.xml
+
+# Crawl rate hint (respectful crawling)
+Crawl-delay: 10
