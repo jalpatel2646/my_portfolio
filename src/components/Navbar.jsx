@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { trackResumeDownload } from '../utils/analytics'
 
 const links = [
   { label: 'Home',       href: '#hero',       id: 'hero' },
@@ -127,6 +128,7 @@ export default function Navbar() {
               whiteSpace: 'nowrap',
               /* Hide below 640px — this !important beats btn-primary's display */
             }}
+            onClick={() => trackResumeDownload('navbar')}
           >
             Resume
           </a>
@@ -266,7 +268,7 @@ export default function Navbar() {
                   boxShadow:      '0 0 20px rgba(14,165,233,0.25)',
                   fontFamily:     "'Inter', sans-serif",
                 }}
-                onClick={() => setMenuOpen(false)}
+                onClick={() => { setMenuOpen(false); trackResumeDownload('mobile_drawer') }}
               >
                 View Full Resume
               </a>

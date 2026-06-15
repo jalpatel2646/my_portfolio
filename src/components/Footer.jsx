@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { trackSocialClick } from '../utils/analytics'
 
 const links = ['Home', 'About', 'Skills', 'Projects', 'Contact']
 
@@ -57,6 +58,10 @@ export default function Footer() {
                 style={{ width: 36, height: 36, borderRadius: 9, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13, background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', color: '#718096', textDecoration: 'none', transition: 'all 0.2s' }}
                 onMouseEnter={e => e.currentTarget.style.color = '#e2e8f0'}
                 onMouseLeave={e => e.currentTarget.style.color = '#718096'}
+                onClick={() => {
+                  const name = social.icon === 'in' ? 'linkedin' : social.icon === '⌥' ? 'github' : social.icon === '▶' ? 'youtube' : social.icon === '◧' ? 'leetcode' : social.icon === '𝕏' ? 'twitter' : 'social'
+                  trackSocialClick(name, 'footer')
+                }}
               >
                 {social.icon}
               </motion.a>

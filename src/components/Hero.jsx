@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { trackCTAClick } from '../utils/analytics'
 
 const phrases = [
   'Full Stack Developer',
@@ -106,7 +107,7 @@ export default function Hero() {
         className="hero-cta-group"
         style={{ display: 'flex', gap: 16, flexWrap: 'wrap', justifyContent: 'center', position: 'relative', zIndex: 1 }}
       >
-        <a href="#projects" className="btn-hero-primary">
+        <a href="#projects" className="btn-hero-primary" onClick={() => trackCTAClick('view_my_work', 'hero_section')}>
           View My Work
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: 8, flexShrink: 0 }}>
             <path d="M5 12h14M12 5l7 7-7 7" />
@@ -117,6 +118,7 @@ export default function Hero() {
           target="_blank"
           rel="noopener noreferrer"
           className="btn-hero-secondary"
+          onClick={() => trackCTAClick('view_resume', 'hero_section')}
         >
           View Resume
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: 8, flexShrink: 0 }}>

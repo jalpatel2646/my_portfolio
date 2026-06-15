@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import emailjs from '@emailjs/browser'
 import SectionWrapper, { SectionLabel, SectionTitle } from './SectionWrapper'
+import { trackContactFormSubmit, trackSocialClick, trackHireMe } from '../utils/analytics'
 
 const contactItems = [
   { icon: '✉️', label: 'Email', value: 'jal.h.patel.cg@gmail.com' },
@@ -37,6 +38,8 @@ export default function Contact() {
       'your_public_key_here'
     ).then(() => {
       setStatus('success')
+      trackContactFormSubmit('contact')
+      trackHireMe('contact_form')
       setTimeout(() => setStatus('idle'), 3000)
       setForm({ name: '', email: '', subject: '', message: '' })
     }).catch((error) => {
@@ -92,6 +95,7 @@ export default function Contact() {
                   style={{ flex: 1, minWidth: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, padding: '10px 6px', borderRadius: 10, fontSize: 12, fontWeight: 500, background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', color: '#718096', cursor: 'pointer', transition: 'all 0.2s', textDecoration: 'none', letterSpacing: '0.04em', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
                   onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(99,179,237,0.28)'; e.currentTarget.style.color = '#e2e8f0'; e.currentTarget.style.background = 'rgba(99,179,237,0.08)' }}
                   onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'; e.currentTarget.style.color = '#718096'; e.currentTarget.style.background = 'rgba(255,255,255,0.04)' }}
+                  onClick={() => trackSocialClick(s.label.toLowerCase().replace(/\s+\(.*\)/, ''), 'contact_section')}
                 >
                   <span>{s.icon}</span> {s.label}
                 </a>

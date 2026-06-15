@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import SectionWrapper, { SectionLabel, SectionTitle } from './SectionWrapper'
+import { trackSocialClick } from '../utils/analytics'
 
 const socials = [
   {
@@ -64,6 +65,7 @@ export default function About() {
                 rel="noopener noreferrer"
                 whileHover={{ y: -4, scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => trackSocialClick(social.name.toLowerCase(), 'about_section')}
                 style={{
                   display: 'flex',
                   alignItems: 'center',

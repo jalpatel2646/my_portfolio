@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import SectionWrapper, { SectionLabel, SectionTitle } from './SectionWrapper'
+import { trackProjectClick, trackProjectView } from '../utils/analytics'
 
 // Mock Data
 const projects = [
@@ -310,6 +311,11 @@ function ProjectCard({ project, onClick, featured = false }) {
   )
 }
 
+function ProjectViewTracker({ projectName }) {
+  useEffect(() => { trackProjectView(projectName) }, [projectName])
+  return null
+}
+
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [activeFilter, setActiveFilter] = useState('All');
@@ -358,12 +364,12 @@ export default function Projects() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-12">
           {filteredProjects.map((p, i) => (
-            <ProjectCard 
-              key={p.name} 
-              project={p} 
-              featured={i === 0 && activeFilter === 'All'} 
-              onClick={setSelectedProject}
-            />
+              <ProjectCard 
+                key={p.name} 
+                project={p} 
+                featured={i === 0 && activeFilter === 'All'} 
+                onClick={(proj) => { trackProjectClick(proj.name); setSelectedProject(proj) }}
+              />
           ))}
         </div>
       </SectionWrapper>
@@ -372,6 +378,7 @@ export default function Projects() {
         {selectedProject && (
           <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
         )}
+        {selectedProject && <ProjectViewTracker projectName={selectedProject.name} />}
       </AnimatePresence>
     </>
   )

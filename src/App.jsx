@@ -12,6 +12,8 @@ import HackathonProjects from './components/HackathonProjects'
 import FigmaDesigns from './components/FigmaDesigns'
 import Achievements from './components/Achievements'
 import Contact from './components/Contact'
+import Footer from './components/Footer'
+import Analytics from './components/Analytics'
 
 function StarCanvas() {
   const canvasRef = useRef(null)
@@ -157,6 +159,7 @@ export default function App() {
       <FloatingShape size={40} color="#63b3ed" delay={2} duration={12} style={{ top: '60%', right: '3%' }} />
       <FloatingShape size={80} color="#22d3ee" delay={4} duration={10} style={{ bottom: '10%', left: '12%', borderRadius: '50%' }} />
 
+      <Analytics />
       <div style={{ position: 'relative', zIndex: 1 }}>
         <Navbar />
         <Hero />
@@ -169,6 +172,7 @@ export default function App() {
         <FigmaDesigns />
         <Achievements />
         <Contact />
+        <Footer />
       </div>
     </div>
   )
