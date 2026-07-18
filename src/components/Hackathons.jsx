@@ -3,6 +3,16 @@ import SectionWrapper, { SectionLabel, SectionTitle } from './SectionWrapper'
 
 const hackathons = [
   {
+    name: "HackSprint '26",
+    role: 'Participant',
+    project: 'LAKSHYA – AI Browser Companion',
+    desc: 'Built an AI-powered browser companion that provides context-aware assistance for smarter browsing, learning, and productivity.',
+    tags: ['AI', 'Browser Extension', 'Chrome Extension', 'Node.js', 'JavaScript', 'LLMs', 'EdTech', 'Productivity'],
+    date: '2026',
+    gradient: 'linear-gradient(135deg, rgba(99,179,237,0.15), rgba(161,140,209,0.14))',
+    projectLink: ''
+  },
+  {
     name: 'Sangam University',
     role: 'Participant',
     project: 'Smart Factory',
@@ -21,8 +31,7 @@ const hackathons = [
     tags: ['Innovation', 'Prototyping'],
     date: '2026',
     gradient: 'linear-gradient(135deg, rgba(251,194,235,0.1), rgba(161,140,209,0.14))',
-    projectLink: '',
-    certLink: 'https://kommodo.ai/i/xTxWWQvnvRFVXlEgRol0'
+    projectLink: ''
   },
   {
     name: 'Data Sprint 2026',
@@ -59,12 +68,12 @@ function HackathonCard({ hackathon, index }) {
       onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(99,179,237,0.28)'}
       onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'}
     >
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-        <div>
-          <h3 className="font-poppins" style={{ fontSize: 20, fontWeight: 700, margin: 0, color: '#fff' }}>{hackathon.name}</h3>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', minHeight: 80, gap: '12px' }}>
+        <div style={{ flex: 1 }}>
+          <h3 className="font-poppins" style={{ fontSize: 20, fontWeight: 700, margin: 0, color: '#fff', lineHeight: 1.3 }}>{hackathon.name}</h3>
           <p className="font-inter" style={{ fontSize: 13, color: '#63b3ed', margin: '4px 0 0 0', fontWeight: 600 }}>{hackathon.role}</p>
         </div>
-        <span style={{ fontSize: 13, color: '#a0aec0', background: 'rgba(255,255,255,0.05)', padding: '4px 10px', borderRadius: 20 }}>{hackathon.date}</span>
+        <span style={{ fontSize: 12, color: '#a0aec0', background: 'rgba(255,255,255,0.05)', padding: '4px 10px', borderRadius: 20, whiteSpace: 'nowrap', flexShrink: 0 }}>{hackathon.date}</span>
       </div>
 
       <div style={{ padding: '16px', background: hackathon.gradient, borderRadius: 12, border: '1px solid rgba(255,255,255,0.05)' }}>

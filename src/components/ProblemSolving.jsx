@@ -1,10 +1,86 @@
 import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
 import SectionWrapper, { SectionLabel, SectionTitle } from './SectionWrapper'
 
 const activityData = [0,0,0,0,0,0,0,0,0,0,0,0,1,0,2,0,0,3,0,1,0,0,4,2]
 const levelClass = ['', 'lv1', 'lv2', 'lv3', 'lv4']
 
 export default function ProblemSolving() {
+  const [stats, setStats] = useState({
+    solvedProblem: 18,
+    easySolved: 14,
+    mediumSolved: 4,
+    hardSolved: 0,
+    ranking: '4,275,131',
+    totalSubmissions: 263,
+    activeDays: 73,
+    maxStreak: 48
+  });
+
+  useEffect(() => {
+    const fetchLeetCodeData = async () => {
+      try {
+        const [solvedRes, profileRes] = await Promise.all([
+          fetch('https://alfa-leetcode-api.onrender.com/jall_patel/solved'),
+          fetch('https://alfa-leetcode-api.onrender.com/jall_patel/profile')
+        ]);
+        
+        if (solvedRes.ok && profileRes.ok) {
+          const solvedData = await solvedRes.json();
+          const profileData = await profileRes.json();
+          
+          let maxStreak = 0;
+          let activeDays = 0;
+          let totalSubmissions = 263;
+
+          if (profileData.submissionCalendar) {
+            const calendar = profileData.submissionCalendar;
+            const timestamps = Object.keys(calendar).map(Number).sort((a,b)=>a-b);
+            activeDays = timestamps.length;
+            
+            let currentStreak = 0;
+            let prevDay = null;
+            
+            for (let ts of timestamps) {
+              const day = Math.floor(ts / 86400);
+              if (prevDay === null || day === prevDay + 1) {
+                currentStreak++;
+              } else if (day > prevDay + 1) {
+                currentStreak = 1;
+              }
+              if (currentStreak > maxStreak) {
+                maxStreak = currentStreak;
+              }
+              prevDay = day;
+            }
+          }
+
+          if (profileData.totalSubmissions) {
+            const allSub = profileData.totalSubmissions.find(s => s.difficulty === 'All');
+            if (allSub) {
+              totalSubmissions = allSub.submissions;
+            }
+          }
+          
+          setStats({
+            solvedProblem: solvedData.solvedProblem || 18,
+            easySolved: solvedData.easySolved || 14,
+            mediumSolved: solvedData.mediumSolved || 4,
+            hardSolved: solvedData.hardSolved || 0,
+            ranking: profileData.ranking ? profileData.ranking.toLocaleString() : '1,090,087',
+            totalSubmissions: totalSubmissions || 263,
+            activeDays: activeDays || 73,
+            maxStreak: maxStreak || 48
+          });
+        }
+      } catch (error) {
+        console.error('Error fetching LeetCode stats:', error);
+      }
+    };
+    
+    fetchLeetCodeData();
+  }, []);
+
   return (
     <SectionWrapper id="problem-solving">
       <SectionLabel>DSA Practice</SectionLabel>
@@ -27,22 +103,22 @@ export default function ProblemSolving() {
             </div>
             <div>
               <div className="font-poppins" style={{ fontSize: 16, fontWeight: 700 }}>LeetCode Profile</div>
-              <div className="font-inter" style={{ fontSize: 12, color: '#718096' }}>@jalpatel</div>
+              <div className="font-inter" style={{ fontSize: 12, color: '#718096' }}>@jall_patel</div>
             </div>
           </div>
 
           {/* Total */}
           <div style={{ textAlign: 'center', marginBottom: 28 }}>
-            <div className="font-poppins gradient-text-blue leetcode-total" style={{ fontSize: 52, fontWeight: 800 }}>18</div>
+            <div className="font-poppins gradient-text-blue leetcode-total" style={{ fontSize: 52, fontWeight: 800 }}>{stats.solvedProblem}</div>
             <div style={{ fontSize: 13, color: '#718096', letterSpacing: '0.04em' }}>Total Problems Solved</div>
           </div>
 
           {/* Easy / Medium / Hard */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
             {[
-              { num: 14, label: 'Easy', color: '#68d391' },
-              { num: 4, label: 'Medium', color: '#fbd38d' },
-              { num: 0, label: 'Hard', color: '#fc8181' },
+              { num: stats.easySolved, label: 'Easy', color: '#68d391' },
+              { num: stats.mediumSolved, label: 'Medium', color: '#fbd38d' },
+              { num: stats.hardSolved, label: 'Hard', color: '#fc8181' },
             ].map(s => (
               <div key={s.label} className="glass-card" style={{ borderRadius: 10, padding: 14, textAlign: 'center' }}>
                 <div className="font-poppins" style={{ fontSize: 22, fontWeight: 800, color: s.color }}>{s.num}</div>
@@ -53,19 +129,29 @@ export default function ProblemSolving() {
 
           {/* Activity graph */}
           <div style={{ marginBottom: 20 }}>
-            <div style={{ fontSize: 11, color: '#718096', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 8 }}>Activity</div>
-          <div className="activity-graph-wrap overflow-x-auto pb-4">
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(24, 1fr)', gap: 3, minWidth: 600 }}>
-              {activityData.map((v, i) => (
-                <div key={i} className={`graph-cell ${levelClass[v]}`} />
-              ))}
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-4">
+              <div style={{ fontSize: 14, color: '#e2e8f0', display: 'flex', alignItems: 'center' }}>
+                <span className="font-poppins" style={{ fontWeight: 700, fontSize: 16, marginRight: 6 }}>{stats.totalSubmissions}</span>
+                <span style={{ color: '#a0aec0' }}>submissions in the past one year</span>
+              </div>
+              <div style={{ fontSize: 12, color: '#a0aec0', display: 'flex', gap: 12 }}>
+                <div>Total active days: <span style={{ fontWeight: 600, color: '#e2e8f0' }}>{stats.activeDays}</span></div>
+                <div>Max streak: <span style={{ fontWeight: 600, color: '#e2e8f0' }}>{stats.maxStreak}</span></div>
+              </div>
             </div>
-          </div>
+            
+            <div className="activity-graph-wrap overflow-x-auto pb-4">
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(24, 1fr)', gap: 3, minWidth: 600 }}>
+                {activityData.map((v, i) => (
+                  <div key={i} className={`graph-cell ${levelClass[v]}`} />
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Ranking */}
           <div style={{ textAlign: 'center', fontSize: 12.5, color: '#718096', padding: 10, background: 'rgba(255,255,255,0.03)', borderRadius: 8, border: '1px solid rgba(255,255,255,0.06)' }}>
-            🏆 Ranking: Top 4,275,131
+            🏆 Ranking: Top {stats.ranking}
           </div>
         </motion.div>
 
@@ -81,7 +167,7 @@ export default function ProblemSolving() {
           <p style={{ fontSize: 15, color: '#718096', lineHeight: 1.85, marginBottom: 32 }}>
             Consistent practice transforms challenging problems into opportunities for growth. The journey of solving complex algorithms shapes the way I approach real-world engineering challenges.
           </p>
-          <a href="https://leetcode.com" target="_blank" rel="noreferrer">
+          <a href="https://leetcode.com/u/jall_patel/" target="_blank" rel="noreferrer">
             <button className="btn-primary">View LeetCode Profile →</button>
           </a>
         </div>

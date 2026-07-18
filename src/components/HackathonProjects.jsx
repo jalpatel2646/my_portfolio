@@ -4,7 +4,7 @@ import SectionWrapper, { SectionLabel, SectionTitle } from './SectionWrapper'
 const hackathonProjects = [
   {
     title: 'AI Cost Intelligence Dashboard',
-    description: 'AI-powered dashboard to analyze and predict costs using data insights.',
+    description: 'AI Cost Intelligence Dashboard is an AI-powered analytics platform that helps organizations monitor, analyze, and optimize operational costs in real time. It detects spending anomalies, forecasts future expenses, provides intelligent recommendations with confidence scoring, and enables autonomous actions through AI-driven insights, helping businesses make faster, data-driven financial decisions.',
     image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     tags: ['AI', 'Analytics', 'Dashboard'],
     hackathon: 'Hackathon 2026',
@@ -13,12 +13,21 @@ const hackathonProjects = [
   },
   {
     title: 'SmartFactory AI — Industrial Management System',
-    description: 'Smart factory management system for real-time monitoring, automation, and analytics.',
+    description: 'LAKSHYA is an AI-powered browser extension that understands the active webpage and provides intelligent, context-aware assistance. It can analyze webpages, summarize articles, understand PDFs, Excel files, and images, summarize YouTube videos, generate quizzes and flashcards, and automatically fill online forms using resume data—all without leaving the browser.',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     tags: ['React', 'Node.js', 'AI', 'Automation'],
     hackathon: 'Hackathon 2026',
     live: 'https://ps-005-codecrusaders.vercel.app/welcome',
     code: 'https://github.com/VishwaPatel892/PS005-Codecrusaders.git'
+  },
+  {
+    title: 'LAKSHYA – AI Browser Companion',
+    description: 'LAKSHYA is an AI-powered browser extension that understands the active webpage and provides intelligent, context-aware assistance. It can analyze webpages, summarize articles, understand PDFs, Excel files, and images, summarize YouTube videos, generate quizzes and flashcards, and automatically fill online forms using resume data—all without leaving the browser.',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    tags: ['JavaScript', 'React', 'Node.js', 'Express.js', 'Chrome Extension', 'AI', 'LLMs'],
+    hackathon: "HackSprint '26",
+    live: 'https://team-lakshya1.vercel.app/',
+    code: 'https://github.com/KHUSHPATEL143/team_lakshya.git'
   }
 ]
 
