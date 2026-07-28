@@ -69,18 +69,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Divider */}
-        <div style={{ height: 1, background: 'rgba(255,255,255,0.06)', marginBottom: 24 }} />
 
-        {/* Bottom row */}
-        <div className="footer-bottom" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
-          <p style={{ fontSize: 13, color: '#4a5568' }}>
-            © {new Date().getFullYear()} <span style={{ color: '#718096' }}>Jal Patel</span>. All rights reserved.
-          </p>
-          <p style={{ fontSize: 12, color: '#4a5568', letterSpacing: '0.03em' }}>
-            Crafted with <span style={{ color: '#fc8181' }}>♥</span> using React + Framer Motion
-          </p>
-        </div>
       </div>
     </footer>
   )

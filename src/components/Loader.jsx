@@ -1,20 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 const Loader = ({ setLoading }) => {
-  useEffect(() => {
-    // Loader visible for ~2.8s, then trigger fade-out (AnimatePresence handles exit)
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2800);
-    return () => clearTimeout(timer);
-  }, [setLoading]);
-
   return (
     <motion.div
       key="loader"
       initial={{ opacity: 1 }}
-      exit={{ opacity: 0, transition: { duration: 0.7, ease: 'easeInOut' } }}
+      exit={{ opacity: 0, transition: { duration: 1.2, ease: 'easeInOut' } }}
       style={{
         position: 'fixed',
         inset: 0,
@@ -22,76 +14,114 @@ const Loader = ({ setLoading }) => {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        background: '#04040f',
+        background: '#09090b',
         zIndex: 99999,
       }}
     >
-      {/* Inner content block */}
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+      <style>
+        {`
+          @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Inter:wght@300;400;500&display=swap');
+          
+          .landing-btn {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: transparent;
+            color: #d1d5db;
+            padding: 14px 40px;
+            font-size: 11px;
+            letter-spacing: 0.3em;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+            font-family: 'Inter', sans-serif;
+            margin-top: 50px;
+          }
 
-        {/* ── Text row ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          .landing-btn:hover {
+            border-color: #0ea5e9;
+            color: #0ea5e9;
+            background: rgba(14, 165, 233, 0.05);
+            box-shadow: 0 0 15px rgba(14, 165, 233, 0.15);
+          }
+        `}
+      </style>
+
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        
+        {/* Name Block */}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <motion.h1 
+            initial={{ opacity: 0, y: 15, rotate: -2 }}
+            animate={{ opacity: 1, y: 0, rotate: 0 }}
+            transition={{ duration: 1.2, ease: 'easeOut' }}
+            style={{ 
+              fontFamily: "'Alex Brush', cursive", 
+              fontSize: 'clamp(5rem, 12vw, 8rem)', 
+              color: '#0ea5e9', 
+              margin: 0, 
+              lineHeight: 1, 
+              transform: 'translateX(-0.35em)',
+              fontWeight: 400
+            }}
+          >
+            Jal
+          </motion.h1>
+          <motion.h1 
+            initial={{ opacity: 0, y: -15, rotate: 2 }}
+            animate={{ opacity: 1, y: 0, rotate: 0 }}
+            transition={{ duration: 1.2, ease: 'easeOut', delay: 0.4 }}
+            style={{ 
+              fontFamily: "'Alex Brush', cursive", 
+              fontSize: 'clamp(5rem, 12vw, 8rem)', 
+              color: '#f8fafc', 
+              margin: 0, 
+              lineHeight: 1, 
+              marginTop: '-0.15em', 
+              transform: 'translateX(0.3em)',
+              fontWeight: 400
+            }}
+          >
+            Patel
+          </motion.h1>
+        </div>
+
+        {/* Divider */}
+        <motion.div 
+           initial={{ width: 0, opacity: 0 }}
+           animate={{ width: 140, opacity: 1 }}
+           transition={{ delay: 1.2, duration: 1, ease: 'easeInOut' }}
+           style={{ height: 1, background: '#0ea5e9', margin: '40px auto 25px' }}
+        />
+
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: 'easeOut' }}
-          style={{ display: 'flex', alignItems: 'baseline', marginBottom: 18 }}
-        >
-          <span
-            style={{
-              fontFamily: "'Poppins', sans-serif",
-              fontSize: 'clamp(3rem, 8vw, 5rem)',
-              fontWeight: 700,
-              color: '#e2e8f0',
-              lineHeight: 1,
-              letterSpacing: '-0.02em',
-              margin: 0,
-            }}
-          >
-            Jal Patel
-          </span>
-
-          {/* Colored dot — delayed so it pops in after the name */}
-          <motion.span
-            initial={{ opacity: 0, scale: 0.4 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5, duration: 0.45, ease: 'easeOut' }}
-            style={{
-              fontSize: 'clamp(3rem, 8vw, 5rem)',
-              fontWeight: 700,
-              lineHeight: 1,
-              marginLeft: 4,
-              background: 'linear-gradient(135deg, #0ea5e9, #22d3ee)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              display: 'inline-block',
-            }}
-          >
-            .
-          </motion.span>
-        </motion.div>
-
-        {/* ── Expanding line ── */}
-        <div
-          style={{
-            width: '100%',
-            height: 2,
-            background: 'rgba(255,255,255,0.08)',
-            borderRadius: 999,
-            overflow: 'hidden',
+          transition={{ delay: 1.6, duration: 1, ease: 'easeOut' }}
+          style={{ 
+            fontFamily: "'Inter', sans-serif", 
+            fontSize: 10, 
+            letterSpacing: '0.45em', 
+            color: '#94a3b8', 
+            textTransform: 'uppercase', 
+            margin: 0,
+            paddingLeft: '0.45em' /* optically center due to tracking */
           }}
         >
-          <motion.div
-            initial={{ width: '0%' }}
-            animate={{ width: '100%' }}
-            transition={{ duration: 1.8, ease: 'easeInOut', delay: 0.3 }}
-            style={{
-              height: '100%',
-              background: 'linear-gradient(90deg, #0ea5e9, #22d3ee, #38bdf8)',
-              borderRadius: 999,
-            }}
-          />
-        </div>
+          Full Stack Developer
+        </motion.p>
+
+        {/* Button */}
+        <motion.button
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 2.2, duration: 0.8, ease: 'easeOut' }}
+          className="landing-btn"
+          onClick={() => setLoading(false)}
+        >
+          View Portfolio
+        </motion.button>
+
       </div>
     </motion.div>
   );

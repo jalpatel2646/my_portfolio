@@ -8,7 +8,7 @@ const achievements = [
     icon: '🏆'
   },
   {
-    title: 'Solved 100+ LeetCode Problems',
+    title: 'Solved 170+ LeetCode Problems',
     description: 'Improved problem-solving skills and algorithmic thinking',
     icon: '💻'
   },
