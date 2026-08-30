@@ -28,6 +28,15 @@ const hackathonProjects = [
     hackathon: "HackSprint '26",
     live: 'https://team-lakshya1.vercel.app/',
     code: 'https://github.com/KHUSHPATEL143/team_lakshya.git'
+  },
+  {
+    title: 'Tripora – Smart Travel Platform',
+    description: 'Tripora is a full-stack travel planning platform that helps users discover destinations, organize trips, manage travel schedules, and connect with fellow travellers through a community experience. It also includes an admin dashboard for analytics and platform management.',
+    image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    tags: ['React', 'Node.js', 'MongoDB', 'Express.js', 'Travel', 'Community'],
+    hackathon: 'HACKATHON 2026',
+    live: 'https://tripora-travels.vercel.app/',
+    code: 'https://github.com/jalpatel2646/Tripora'
   }
 ]
 
