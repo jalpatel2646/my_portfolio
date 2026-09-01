@@ -140,7 +140,7 @@ export default function About() {
                }}
              >
                <motion.img
-                 src="https://res.cloudinary.com/diipavxsd/image/upload/f_auto,q_auto/Gemini_Generated_Image_1hwauc1hwauc1hwa_fk4tyr"
+                 src="https://res.cloudinary.com/due7cp0hz/image/upload/v1788281826/profilepic_jtzu9k.png"
                  alt="Jal Patel Profile"
                  whileHover={{ scale: 1.05 }}
                  transition={{ duration: 0.4, ease: "easeOut" }}
