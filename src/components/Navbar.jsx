@@ -97,7 +97,7 @@ export default function Navbar() {
                     transition:      'all 0.3s ease',
                     textDecoration:  'none',
                     textShadow:      active ? '0 0 8px rgba(255,255,255,0.3)' : 'none',
-                    borderBottom:    active ? '2px solid #0ea5e9' : '2px solid transparent',
+                    borderBottom:    active ? '2px solid #c084fc' : '2px solid transparent',
                     paddingBottom:   '4px',
                     whiteSpace:      'nowrap',
                   }}

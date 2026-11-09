@@ -75,7 +75,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Jal Patel. All rights reserved.
           </p>
           <p className="font-inter" style={{ fontSize: 13, color: '#64748b', margin: 0 }}>
-            Designed & Built with <span style={{ color: '#22d3ee' }}>React</span> & <span style={{ color: '#38bdf8' }}>Tailwind CSS</span>
+            Designed & Built with <span style={{ color: '#c084fc' }}>React</span> & <span style={{ color: '#e879f9' }}>Tailwind CSS</span>
           </p>
         </div>
       </div>

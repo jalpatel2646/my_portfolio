@@ -168,7 +168,28 @@ function ProjectModal({ project, onClose }) {
       >
         {/* Modal Header/Image */}
         <div className="project-modal-header" style={{ position: 'relative', height: project.cardHeight ? project.cardHeight + 130 : 350, background: project.gradient, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', flexShrink: 0 }}>
-          {project.image ? (
+          {/* Floating Category Pill */}
+        <div style={{ position: 'absolute', top: 14, left: 14, zIndex: 6 }}>
+          <span style={{
+            fontSize: 11,
+            fontWeight: 600,
+            letterSpacing: '0.04em',
+            padding: '4px 11px',
+            borderRadius: 9999,
+            background: 'rgba(5, 3, 14, 0.75)',
+            backdropFilter: 'blur(12px)',
+            border: '1px solid rgba(255, 255, 255, 0.12)',
+            color: '#e2e8f0',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 5.5
+          }}>
+            <span style={{ width: 6, height: 6, borderRadius: '50%', background: project.live ? '#4ade80' : '#c084fc' }} />
+            {project.category}
+          </span>
+        </div>
+
+        {project.image ? (
             <img src={project.image} alt={project.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', ...(project.imageStyle || {}) }} loading="lazy" />
           ) : (
             <span style={{ fontSize: 80 }}>{project.emoji}</span>
@@ -188,7 +209,7 @@ function ProjectModal({ project, onClose }) {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
             <div style={{ background: 'rgba(255,255,255,0.02)', padding: 24, borderRadius: 16, border: '1px solid rgba(255,255,255,0.05)' }}>
-              <h3 className="font-poppins" style={{ color: '#0ea5e9', fontSize: 18, marginBottom: 12, fontWeight: 600 }}>The Problem</h3>
+              <h3 className="font-poppins" style={{ color: '#c084fc', fontSize: 18, marginBottom: 12, fontWeight: 600 }}>The Problem</h3>
               <p style={{ color: '#cbd5e1', fontSize: 15, lineHeight: 1.7 }}>{project.problem}</p>
             </div>
             <div style={{ background: 'rgba(255,255,255,0.02)', padding: 24, borderRadius: 16, border: '1px solid rgba(255,255,255,0.05)' }}>
@@ -199,7 +220,7 @@ function ProjectModal({ project, onClose }) {
 
           <div style={{ marginBottom: 40 }}>
             <h3 className="font-poppins" style={{ color: '#e2e8f0', fontSize: 16, marginBottom: 12, fontWeight: 600 }}>Tech Stack</h3>
-            <div className="font-inter" style={{ color: '#22d3ee', fontSize: 15, padding: '12px 20px', background: 'rgba(34, 211, 238, 0.1)', borderRadius: 12, display: 'inline-block' }}>
+            <div className="font-inter" style={{ color: '#c084fc', fontSize: 15, padding: '12px 20px', background: 'rgba(34, 211, 238, 0.1)', borderRadius: 12, display: 'inline-block' }}>
               {project.techStack}
             </div>
           </div>
@@ -232,14 +253,14 @@ function ProjectModal({ project, onClose }) {
   )
 }
 
-function ProjectCard({ project, onClick, featured = false }) {
+function ProjectCard({ project, onClick, featured = false, className = '' }) {
   return (
     <SpotlightCard
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       whileHover={{ y: -7, boxShadow: '0 24px 60px rgba(14,165,233,0.18)' }}
-      className={`flex ${featured ? 'lg:col-span-full flex-col lg:flex-row' : 'flex-col'}`}
+      className={`flex ${featured ? 'flex-col lg:flex-row' : 'flex-col'} ${className}`}
       onClick={() => onClick(project)}
       style={{ 
         borderRadius: 24, 
@@ -263,6 +284,27 @@ function ProjectCard({ project, onClick, featured = false }) {
           overflow: 'hidden' 
         }}
       >
+        {/* Floating Category Pill */}
+        <div style={{ position: 'absolute', top: 14, left: 14, zIndex: 6 }}>
+          <span style={{
+            fontSize: 11,
+            fontWeight: 600,
+            letterSpacing: '0.04em',
+            padding: '4px 11px',
+            borderRadius: 9999,
+            background: 'rgba(5, 3, 14, 0.75)',
+            backdropFilter: 'blur(12px)',
+            border: '1px solid rgba(255, 255, 255, 0.12)',
+            color: '#e2e8f0',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 5.5
+          }}>
+            <span style={{ width: 6, height: 6, borderRadius: '50%', background: project.live ? '#4ade80' : '#c084fc' }} />
+            {project.category}
+          </span>
+        </div>
+
         {project.image ? (
           <img 
             src={project.image} 
@@ -297,7 +339,7 @@ function ProjectCard({ project, onClick, featured = false }) {
       {/* Body */}
       <div style={{ padding: featured ? '48px 40px' : '24px 26px', flex: featured ? '1' : 'none', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
         {featured && (
-          <span style={{ color: '#0ea5e9', fontSize: 13, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12 }}>
+          <span style={{ color: '#c084fc', fontSize: 13, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12 }}>
             ⭐ Featured Project
           </span>
         )}
@@ -310,7 +352,7 @@ function ProjectCard({ project, onClick, featured = false }) {
             <span
               key={tag}
               className="font-inter"
-              style={{ fontSize: 11, padding: '4px 12px', borderRadius: 100, background: 'rgba(34,211,238,0.1)', border: '1px solid rgba(34,211,238,0.2)', color: '#22d3ee', letterSpacing: '0.03em' }}
+              style={{ fontSize: 11, padding: '4px 12px', borderRadius: 100, background: 'rgba(168,85,247,0.12)', border: '1px solid rgba(192,132,252,0.25)', color: '#c084fc', letterSpacing: '0.03em' }}
             >
               {tag}
             </span>
@@ -367,9 +409,9 @@ export default function Projects() {
               style={{
                 padding: '8px 20px',
                 borderRadius: 100,
-                background: activeFilter === filter ? 'rgba(34, 211, 238, 0.15)' : 'rgba(255, 255, 255, 0.05)',
-                border: `1px solid ${activeFilter === filter ? 'rgba(34, 211, 238, 0.4)' : 'rgba(255, 255, 255, 0.1)'}`,
-                color: activeFilter === filter ? '#22d3ee' : '#94a3b8',
+                background: activeFilter === filter ? 'rgba(168, 85, 247, 0.18)' : 'rgba(255, 255, 255, 0.05)',
+                border: `1px solid ${activeFilter === filter ? 'rgba(192, 132, 252, 0.45)' : 'rgba(255, 255, 255, 0.1)'}`,
+                color: activeFilter === filter ? '#c084fc' : '#94a3b8',
                 fontSize: 14,
                 cursor: 'pointer',
                 transition: 'all 0.3s ease'
@@ -380,15 +422,27 @@ export default function Projects() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-12">
-          {filteredProjects.map((p, i) => (
+        {/* Asymmetric Bento Grid (Apple/Linear Style) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 md:gap-8 mt-8 md:mt-12">
+          {filteredProjects.map((p, i) => {
+            const getBentoSpan = () => {
+              if (activeFilter !== 'All') return 'lg:col-span-4'
+              if (i === 0) return 'lg:col-span-12'
+              if (i === 1) return 'lg:col-span-7'
+              if (i === 2) return 'lg:col-span-5'
+              return 'lg:col-span-6'
+            }
+
+            return (
               <ProjectCard 
                 key={p.name} 
                 project={p} 
                 featured={i === 0 && activeFilter === 'All'} 
+                className={getBentoSpan()}
                 onClick={(proj) => { trackProjectClick(proj.name); setSelectedProject(proj) }}
               />
-          ))}
+            )
+          })}
         </div>
       </SectionWrapper>
 

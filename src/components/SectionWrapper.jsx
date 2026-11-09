@@ -33,7 +33,7 @@ export function SectionLabel({ children }) {
   return (
     <div
       className="font-inter section-label-line"
-      style={{ fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#63b3ed', marginBottom: 14 }}
+      style={{ fontSize: 12, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#c084fc', marginBottom: 14 }}
     >
       {children}
     </div>

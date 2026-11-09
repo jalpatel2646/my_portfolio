@@ -13,6 +13,7 @@ import FigmaDesigns from './components/FigmaDesigns'
 import Achievements from './components/Achievements'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import FloatingDock from './components/FloatingDock'
 import Analytics from './components/Analytics'
 
 function StarCanvas() {
@@ -110,7 +111,7 @@ export default function App() {
     <div
       onMouseMove={handleMouseMove}
       style={{
-        background: '#04040f',
+        background: '#05030e',
         minHeight: '100vh',
         position: 'relative',
         overflowX: 'hidden',   /* prevent horizontal scroll from orbs/shapes */
@@ -125,7 +126,7 @@ export default function App() {
         style={{
           position: 'fixed',
           top: 0, left: 0, right: 0, bottom: 0,
-          background: `radial-gradient(800px circle at ${mousePos.x}px ${mousePos.y}px, rgba(14, 165, 233, 0.08), transparent 40%)`,
+          background: `radial-gradient(800px circle at ${mousePos.x}px ${mousePos.y}px, rgba(168, 85, 247, 0.09), transparent 40%)`,
           pointerEvents: 'none',
           zIndex: 0,
           transition: 'background 0.1s ease-out'
@@ -140,7 +141,7 @@ export default function App() {
           left: 0,
           right: 0,
           height: 3,
-          background: "linear-gradient(90deg, #0ea5e9, #22d3ee, #63b3ed)",
+          background: "linear-gradient(90deg, #9333ea, #c084fc, #f472b6)",
           zIndex: 9999
         }}
       />
@@ -153,7 +154,7 @@ export default function App() {
           width: '1100px',
           maxWidth: '100vw',
           height: '460px',
-          background: 'radial-gradient(50% 100% at 50% 0%, rgba(14, 165, 233, 0.18) 0%, rgba(99, 102, 241, 0.08) 50%, transparent 100%)',
+          background: 'radial-gradient(50% 100% at 50% 0%, rgba(168, 85, 247, 0.22) 0%, rgba(236, 72, 153, 0.08) 50%, transparent 100%)',
           zIndex: 0,
           filter: 'blur(50px)',
         }}
@@ -167,16 +168,16 @@ export default function App() {
 
       {/* Floating orbs — clamped to viewport, no overflow */}
       <div className="orb fixed pointer-events-none"
-        style={{ width: 400, height: 400, borderRadius: '50%', background: 'radial-gradient(#667eea, transparent)', top: -100, left: -100, filter: 'blur(80px)', opacity: 0.12, zIndex: 0, maxWidth: '80vw', maxHeight: '80vw' }} />
+        style={{ width: 400, height: 400, borderRadius: '50%', background: 'radial-gradient(#8b5cf6, transparent)', top: -100, left: -100, filter: 'blur(80px)', opacity: 0.12, zIndex: 0, maxWidth: '80vw', maxHeight: '80vw' }} />
       <div className="orb orb-delay-1 fixed pointer-events-none"
-        style={{ width: 350, height: 350, borderRadius: '50%', background: 'radial-gradient(#764ba2, transparent)', bottom: 100, right: -60, filter: 'blur(80px)', opacity: 0.12, zIndex: 0, maxWidth: '80vw', maxHeight: '80vw' }} />
+        style={{ width: 350, height: 350, borderRadius: '50%', background: 'radial-gradient(#d946ef, transparent)', bottom: 100, right: -60, filter: 'blur(80px)', opacity: 0.12, zIndex: 0, maxWidth: '80vw', maxHeight: '80vw' }} />
       <div className="orb orb-delay-2 fixed pointer-events-none"
-        style={{ width: 250, height: 250, borderRadius: '50%', background: 'radial-gradient(#76e4f7, transparent)', top: '40%', left: '50%', filter: 'blur(80px)', opacity: 0.1, zIndex: 0 }} />
+        style={{ width: 250, height: 250, borderRadius: '50%', background: 'radial-gradient(#6366f1, transparent)', top: '40%', left: '50%', filter: 'blur(80px)', opacity: 0.1, zIndex: 0 }} />
 
       {/* Floating Particles — kept inside viewport with max-width guard */}
-      <FloatingShape size={60} color="#0ea5e9" delay={0} duration={8}  style={{ top: '20%', left: '3%' }} />
-      <FloatingShape size={40} color="#63b3ed" delay={2} duration={12} style={{ top: '60%', right: '3%' }} />
-      <FloatingShape size={80} color="#22d3ee" delay={4} duration={10} style={{ bottom: '10%', left: '12%', borderRadius: '50%' }} />
+      <FloatingShape size={60} color="#c084fc" delay={0} duration={8}  style={{ top: '20%', left: '3%' }} />
+      <FloatingShape size={40} color="#a855f7" delay={2} duration={12} style={{ top: '60%', right: '3%' }} />
+      <FloatingShape size={80} color="#f472b6" delay={4} duration={10} style={{ bottom: '10%', left: '12%', borderRadius: '50%' }} />
 
       <Analytics />
       <div style={{ position: 'relative', zIndex: 1 }}>
@@ -192,6 +193,7 @@ export default function App() {
         <Achievements />
         <Contact />
         <Footer />
+        <FloatingDock />
       </div>
     </div>
   )

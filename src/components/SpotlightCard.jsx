@@ -6,8 +6,8 @@ export default function SpotlightCard({
   className = '',
   style = {},
   onClick,
-  spotlightColor = 'rgba(34, 211, 238, 0.12)',
-  borderColor = 'rgba(34, 211, 238, 0.45)',
+  spotlightColor = 'rgba(192, 132, 252, 0.14)',
+  borderColor = 'rgba(192, 132, 252, 0.5)',
   ...props
 }) {
   const cardRef = useRef(null)
@@ -35,7 +35,7 @@ export default function SpotlightCard({
       }}
       {...props}
     >
-      {/* Subtle Radial Cursor Spotlight Glow */}
+      {/* Subtle Radial Cursor Spotlight Glow (Violet Nebula) */}
       <div
         style={{
           position: 'absolute',

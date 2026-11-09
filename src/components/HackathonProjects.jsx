@@ -78,7 +78,7 @@ export default function HackathonProjects() {
                 className="project-img"
               />
               {project.badge && (
-                <div style={{ position: 'absolute', top: 16, right: 16, background: 'rgba(14,165,233,0.9)', color: '#fff', fontSize: 12, fontWeight: 700, padding: '6px 14px', borderRadius: 100, letterSpacing: '0.05em', textTransform: 'uppercase', boxShadow: '0 4px 12px rgba(14,165,233,0.3)' }}>
+                <div style={{ position: 'absolute', top: 16, right: 16, background: 'rgba(147,51,234,0.9)', color: '#fff', fontSize: 12, fontWeight: 700, padding: '6px 14px', borderRadius: 100, letterSpacing: '0.05em', textTransform: 'uppercase', boxShadow: '0 4px 12px rgba(147,51,234,0.3)' }}>
                   {project.badge}
                 </div>
               )}
@@ -88,7 +88,7 @@ export default function HackathonProjects() {
             <div style={{ padding: 28, flex: 1, display: 'flex', flexDirection: 'column' }}>
               <h3 className="font-poppins" style={{ fontSize: 22, fontWeight: 700, color: '#fff', margin: '0 0 10px 0' }}>{project.title}</h3>
               
-              <div className="font-inter" style={{ fontSize: 12, color: '#0ea5e9', fontWeight: 600, letterSpacing: '0.04em', textTransform: 'uppercase', marginBottom: 16 }}>
+              <div className="font-inter" style={{ fontSize: 12, color: '#c084fc', fontWeight: 600, letterSpacing: '0.04em', textTransform: 'uppercase', marginBottom: 16 }}>
                 {project.hackathon}
               </div>
 
@@ -99,7 +99,7 @@ export default function HackathonProjects() {
               {/* Tags */}
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 28 }}>
                 {project.tags.map(tag => (
-                  <span key={tag} className="font-inter" style={{ fontSize: 11, padding: '5px 12px', borderRadius: 100, background: 'rgba(34,211,238,0.1)', border: '1px solid rgba(34,211,238,0.2)', color: '#22d3ee', letterSpacing: '0.02em' }}>
+                  <span key={tag} className="font-inter" style={{ fontSize: 11, padding: '5px 12px', borderRadius: 100, background: 'rgba(168,85,247,0.12)', border: '1px solid rgba(192,132,252,0.25)', color: '#c084fc', letterSpacing: '0.02em' }}>
                     {tag}
                   </span>
                 ))}

@@ -49,10 +49,10 @@ export default function About() {
            viewport={{ once: true }}
            transition={{ duration: 0.6 }}
         >
-          <p style={{ fontSize: 16, color: '#718096', lineHeight: 1.9, marginBottom: 20 }}>
+          <p style={{ fontSize: 16, color: '#cbd5e1', lineHeight: 1.9, marginBottom: 20 }}>
             Hi, I'm Jal Patel, a passionate Full Stack Web Developer. I specialize in building visually stunning and highly functional web applications. My journey is driven by curiosity and a desire to create impactful digital experiences.
           </p>
-          <p style={{ fontSize: 16, color: '#718096', lineHeight: 1.9, marginBottom: 32 }}>
+          <p style={{ fontSize: 16, color: '#cbd5e1', lineHeight: 1.9, marginBottom: 32 }}>
             From designing pixel-perfect interfaces to architecting robust back-end systems, I love every layer of the stack. I'm constantly learning, building, and growing — one commit at a time.
           </p>
 
@@ -79,9 +79,9 @@ export default function About() {
                   transition: 'all 0.3s ease'
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.borderColor = '#63b3ed'
-                  e.currentTarget.style.color = '#63b3ed'
-                  e.currentTarget.style.background = 'rgba(99,179,237,0.1)'
+                  e.currentTarget.style.borderColor = '#c084fc'
+                  e.currentTarget.style.color = '#c084fc'
+                  e.currentTarget.style.background = 'rgba(168,85,247,0.14)'
                 }}
                 onMouseLeave={e => {
                   e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'
@@ -91,6 +91,34 @@ export default function About() {
               >
                 {social.icon}
               </motion.a>
+            ))}
+          </div>
+
+          {/* Senior Dev Metric Badges (Bento Style) */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 14, marginTop: 12 }}>
+            {[
+              { num: '10+', label: 'Shipped Builds', sub: 'Full Stack & Frontend' },
+              { num: '170+', label: 'LeetCode Solved', sub: 'Data Structures & Algo' },
+              { num: '4+', label: 'Hackathons', sub: 'SIH & Fast Prototypes' },
+              { num: '100%', label: 'Responsive', sub: 'Mobile to Desktop' },
+            ].map(stat => (
+              <motion.div
+                key={stat.label}
+                whileHover={{ y: -3, borderColor: 'rgba(192, 132, 252, 0.45)', boxShadow: '0 8px 24px -4px rgba(147, 51, 234, 0.25)' }}
+                style={{
+                  padding: '16px 14px',
+                  borderRadius: 16,
+                  background: 'rgba(18, 12, 32, 0.6)',
+                  border: '1px solid rgba(255, 255, 255, 0.08)',
+                  backdropFilter: 'blur(16px)',
+                  boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.08)',
+                  transition: 'all 0.25s ease'
+                }}
+              >
+                <div className="font-poppins gradient-text-cyan" style={{ fontSize: 26, fontWeight: 800, lineHeight: 1 }}>{stat.num}</div>
+                <div className="font-inter" style={{ fontSize: 13, fontWeight: 600, color: '#f1f5f9', marginTop: 8 }}>{stat.label}</div>
+                <div className="font-inter" style={{ fontSize: 11, color: '#94a3b8', marginTop: 2 }}>{stat.sub}</div>
+              </motion.div>
             ))}
           </div>
 
@@ -118,15 +146,15 @@ export default function About() {
                aspectRatio: '4/5',
                borderRadius: 24,
                padding: 8,
-               background: 'linear-gradient(135deg, rgba(14,165,233,0.3), rgba(34,211,238,0.3))',
-               boxShadow: '0 0 30px rgba(14,165,233,0.2)',
+               background: 'linear-gradient(135deg, rgba(168,85,247,0.35), rgba(192,132,252,0.25))',
+               boxShadow: '0 0 40px rgba(147,51,234,0.3)',
              }}
            >
              <div style={{
                position: 'absolute',
                inset: 0,
                borderRadius: 24,
-               background: 'linear-gradient(135deg, #0ea5e9, #22d3ee)',
+               background: 'linear-gradient(135deg, #9333ea, #c084fc)',
                opacity: 0.5,
                filter: 'blur(12px)',
                zIndex: -1

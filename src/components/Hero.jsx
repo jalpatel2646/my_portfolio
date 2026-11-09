@@ -55,9 +55,9 @@ function RoleFlippingText() {
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
             className="font-semibold"
             style={{
-              color: '#22d3ee',
+              color: '#c084fc',
               display: 'inline-block',
-              textShadow: '0 0 24px rgba(34, 211, 238, 0.4)',
+              textShadow: '0 0 24px rgba(192, 132, 252, 0.45)',
             }}
           >
             {roles[index]}
@@ -83,9 +83,9 @@ export default function Hero() {
           display: 'inline-flex',
           alignItems: 'center',
           gap: 10,
-          background: 'rgba(12, 18, 30, 0.6)',
-          border: '1px solid rgba(14, 165, 233, 0.28)',
-          boxShadow: '0 0 24px -4px rgba(14, 165, 233, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+          background: 'rgba(18, 12, 32, 0.65)',
+          border: '1px solid rgba(168, 85, 247, 0.3)',
+          boxShadow: '0 0 24px -4px rgba(168, 85, 247, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
           backdropFilter: 'blur(16px)',
           borderRadius: 9999,
           padding: '7px 20px',
@@ -122,7 +122,7 @@ export default function Hero() {
             letterSpacing: '0.04em',
           }}
         >
-          Available for Opportunities <span style={{ color: '#475569', margin: '0 4px' }}>•</span> <span style={{ color: '#38bdf8', fontWeight: 600 }}>Full Stack Developer</span>
+          Available for Opportunities <span style={{ color: '#475569', margin: '0 4px' }}>•</span> <span style={{ color: '#c084fc', fontWeight: 600 }}>Full Stack Developer</span>
         </span>
       </motion.div>
 
@@ -226,7 +226,7 @@ export default function Hero() {
           {primaryTech.map((tech) => (
             <motion.div
               key={tech.name}
-              whileHover={{ y: -3, borderColor: 'rgba(34, 211, 238, 0.4)' }}
+              whileHover={{ y: -3, borderColor: 'rgba(192, 132, 252, 0.45)' }}
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -273,7 +273,7 @@ export default function Hero() {
               width: 26,
               height: 40,
               borderRadius: 14,
-              border: '2px solid rgba(14, 165, 233, 0.35)',
+              border: '2px solid rgba(168, 85, 247, 0.4)',
               margin: '0 auto',
               display: 'flex',
               alignItems: 'flex-start',
@@ -282,7 +282,7 @@ export default function Hero() {
               cursor: 'pointer',
             }}
           >
-            <div style={{ width: 3, height: 7, borderRadius: 2, background: 'rgba(34, 211, 238, 0.8)' }} />
+            <div style={{ width: 3, height: 7, borderRadius: 2, background: 'rgba(192, 132, 252, 0.9)' }} />
           </motion.div>
         </a>
       </motion.div>
