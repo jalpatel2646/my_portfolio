@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import SpotlightCard from './SpotlightCard'
 import SectionWrapper, { SectionLabel, SectionTitle } from './SectionWrapper'
 import { trackProjectClick, trackProjectView } from '../utils/analytics'
 
@@ -233,22 +234,18 @@ function ProjectModal({ project, onClose }) {
 
 function ProjectCard({ project, onClick, featured = false }) {
   return (
-    <motion.div
+    <SpotlightCard
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      whileHover={{ y: -8, boxShadow: '0 24px 60px rgba(167,139,250,0.15)' }}
-      className={`glass-card flex ${featured ? 'lg:col-span-full flex-col lg:flex-row' : 'flex-col'}`}
+      whileHover={{ y: -7, boxShadow: '0 24px 60px rgba(14,165,233,0.18)' }}
+      className={`flex ${featured ? 'lg:col-span-full flex-col lg:flex-row' : 'flex-col'}`}
       onClick={() => onClick(project)}
       style={{ 
-        position: 'relative',
         borderRadius: 24, 
-        overflow: 'hidden', 
         cursor: 'pointer', 
         transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
       }}
-      onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(192,132,252,0.3)'}
-      onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'}
     >
       {/* Thumbnail */}
       <div 
@@ -328,7 +325,7 @@ function ProjectCard({ project, onClick, featured = false }) {
           {project.figma && <a href={project.figma} onClick={e => e.stopPropagation()} target="_blank" rel="noopener noreferrer" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: 13, fontWeight: 500, transition: 'color 0.2s', display: 'flex', alignItems: 'center', gap: 4 }} onMouseEnter={e => e.currentTarget.style.color='#e2e8f0'} onMouseLeave={e => e.currentTarget.style.color='#94a3b8'}><span>🎨</span> Figma</a>}
         </div>
       </div>
-    </motion.div>
+    </SpotlightCard>
   )
 }
 

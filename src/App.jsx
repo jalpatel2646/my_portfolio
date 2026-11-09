@@ -27,7 +27,7 @@ function StarCanvas() {
     function resize() {
       canvas.width = window.innerWidth
       canvas.height = window.innerHeight
-      stars = Array.from({ length: 220 }, () => ({
+      stars = Array.from({ length: 110 }, () => ({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
         r: Math.random() * 1.4 + 0.2,
@@ -42,7 +42,7 @@ function StarCanvas() {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       stars.forEach(s => {
         s.a += s.speed
-        const alpha = Math.max(0, 0.2 + Math.sin(s.a) * 0.4)
+        const alpha = Math.max(0, 0.08 + Math.sin(s.a) * 0.22)
         ctx.beginPath()
         ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2)
         ctx.fillStyle = `rgba(255,255,255,${alpha})`
@@ -145,6 +145,25 @@ export default function App() {
         }}
       />
       <StarCanvas />
+
+      {/* Top Ambient Radiant Beam (Linear Style) */}
+      <div 
+        className="pointer-events-none fixed top-0 left-1/2 -translate-x-1/2"
+        style={{
+          width: '1100px',
+          maxWidth: '100vw',
+          height: '460px',
+          background: 'radial-gradient(50% 100% at 50% 0%, rgba(14, 165, 233, 0.18) 0%, rgba(99, 102, 241, 0.08) 50%, transparent 100%)',
+          zIndex: 0,
+          filter: 'blur(50px)',
+        }}
+      />
+
+      {/* Technical Dot Grid Overlay */}
+      <div 
+        className="bg-dot-grid pointer-events-none fixed inset-0" 
+        style={{ zIndex: 0, opacity: 0.75 }} 
+      />
 
       {/* Floating orbs — clamped to viewport, no overflow */}
       <div className="orb fixed pointer-events-none"

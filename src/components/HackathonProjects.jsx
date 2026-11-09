@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import SpotlightCard from './SpotlightCard'
 import SectionWrapper, { SectionLabel, SectionTitle } from './SectionWrapper'
 
 const hackathonProjects = [
@@ -54,16 +55,15 @@ export default function HackathonProjects() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
         {hackathonProjects.map((project, i) => (
-          <motion.div
+          <SpotlightCard
             key={i}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            whileHover={{ y: -6, boxShadow: '0 24px 60px rgba(14,165,233,0.18)' }}
             transition={{ delay: i * 0.15, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="glass-card"
             style={{ 
               borderRadius: 20, 
-              overflow: 'hidden', 
               display: 'flex', 
               flexDirection: 'column', 
               transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)' 
@@ -115,7 +115,7 @@ export default function HackathonProjects() {
                 </a>
               </div>
             </div>
-          </motion.div>
+          </SpotlightCard>
         ))}
       </div>
     </SectionWrapper>
