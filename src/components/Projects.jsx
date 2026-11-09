@@ -73,7 +73,7 @@ const projects = [
   {
     name: 'Instagram Portfolio / Reel Creator Portfolio',
     emoji: '🎬',
-    image: '',
+    image: 'https://i.pinimg.com/1200x/c4/28/3d/c4283d11595ae43680ab3e3508874258.jpg',
     live: 'https://darling-blini-47b4d8.netlify.app',
     code: '',
     youtube: '',
