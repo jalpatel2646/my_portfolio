@@ -36,7 +36,7 @@ const hackathonProjects = [
     tags: ['React', 'Node.js', 'MongoDB', 'Express.js', 'Travel', 'Community'],
     hackathon: 'HACKATHON 2026',
     live: 'https://tripora-travels.vercel.app/',
-    code: 'https://github.com/jalpatel2646/Tripora'
+    code: 'https://github.com/jalpatel2646/Tripora.git'
   }
 ]
 

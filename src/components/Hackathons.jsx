@@ -3,6 +3,17 @@ import SectionWrapper, { SectionLabel, SectionTitle } from './SectionWrapper'
 
 const hackathons = [
   {
+    name: 'Smart India Hackathon (SIH)',
+    role: 'Participant',
+    project: 'PramaanSetu',
+    desc: 'PramaanSetu is a platform built for SIH that streamlines certificate verification and digital credential management, bridging the gap between institutions and verification bodies with a secure, trusted workflow.',
+    tags: ['React', 'Node.js', 'MongoDB', 'SIH', 'DigitalIndia', 'Verification'],
+    date: '2024',
+    gradient: 'linear-gradient(135deg, rgba(34,197,94,0.15), rgba(99,179,237,0.14))',
+    projectLink: 'https://pramaansetu.vercel.app',
+    codeLink: 'https://github.com/Dev1822/SIH-Syntax-Squad.git'
+  },
+  {
     name: "HackSprint '26",
     role: 'Participant',
     project: 'LAKSHYA – AI Browser Companion',
@@ -93,18 +104,32 @@ function HackathonCard({ hackathon, index }) {
         ))}
       </div>
 
-      {hackathon.projectLink && (
-        <div style={{ display: 'flex', gap: 12, marginTop: 8 }}>
-          <motion.a
-            href={hackathon.projectLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            style={{ fontSize: 13, padding: '8px 16px', borderRadius: 8, background: 'rgba(99,179,237,0.15)', color: '#90cdf4', textDecoration: 'none', border: '1px solid rgba(99,179,237,0.2)' }}
-          >
-            View Project
-          </motion.a>
+      {(hackathon.projectLink || hackathon.codeLink) && (
+        <div style={{ display: 'flex', gap: 12, marginTop: 8, flexWrap: 'wrap' }}>
+          {hackathon.projectLink && (
+            <motion.a
+              href={hackathon.projectLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              style={{ fontSize: 13, padding: '8px 16px', borderRadius: 8, background: 'rgba(99,179,237,0.15)', color: '#90cdf4', textDecoration: 'none', border: '1px solid rgba(99,179,237,0.2)' }}
+            >
+              View Project
+            </motion.a>
+          )}
+          {hackathon.codeLink && (
+            <motion.a
+              href={hackathon.codeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              style={{ fontSize: 13, padding: '8px 16px', borderRadius: 8, background: 'rgba(255,255,255,0.05)', color: '#a0aec0', textDecoration: 'none', border: '1px solid rgba(255,255,255,0.1)' }}
+            >
+              ⌥ GitHub
+            </motion.a>
+          )}
         </div>
       )}
     </motion.div>
