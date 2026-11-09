@@ -7,11 +7,11 @@ const levelClass = ['', 'lv1', 'lv2', 'lv3', 'lv4']
 
 export default function ProblemSolving() {
   const [stats, setStats] = useState({
-    solvedProblem: 18,
-    easySolved: 14,
-    mediumSolved: 4,
-    hardSolved: 0,
-    ranking: '4,275,131',
+    solvedProblem: 235,
+    easySolved: 178,
+    mediumSolved: 53,
+    hardSolved: 4,
+    ranking: '1,090,087',
     totalSubmissions: 263,
     activeDays: 73,
     maxStreak: 48
@@ -63,10 +63,10 @@ export default function ProblemSolving() {
           }
           
           setStats({
-            solvedProblem: solvedData.solvedProblem || 18,
-            easySolved: solvedData.easySolved || 14,
-            mediumSolved: solvedData.mediumSolved || 4,
-            hardSolved: solvedData.hardSolved || 0,
+            solvedProblem: solvedData.solvedProblem || 235,
+            easySolved: solvedData.easySolved || 178,
+            mediumSolved: solvedData.mediumSolved || 53,
+            hardSolved: solvedData.hardSolved || 4,
             ranking: profileData.ranking ? profileData.ranking.toLocaleString() : '1,090,087',
             totalSubmissions: totalSubmissions || 263,
             activeDays: activeDays || 73,
@@ -97,14 +97,36 @@ export default function ProblemSolving() {
           style={{ borderRadius: 20, padding: 32, transition: 'all 0.3s' }}
         >
           {/* Header */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 28 }}>
-            <div style={{ width: 36, height: 36, borderRadius: 8, background: 'linear-gradient(135deg,#ff9500,#ffd60a)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'Poppins', sans-serif", fontWeight: 800, fontSize: 13, color: '#000' }}>
-              LC
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 28 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+              <div style={{ width: 36, height: 36, borderRadius: 8, background: 'linear-gradient(135deg,#ff9500,#ffd60a)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'Poppins', sans-serif", fontWeight: 800, fontSize: 13, color: '#000' }}>
+                LC
+              </div>
+              <div>
+                <div className="font-poppins" style={{ fontSize: 16, fontWeight: 700 }}>LeetCode Profile</div>
+                <div className="font-inter" style={{ fontSize: 12, color: '#718096' }}>@jall_patel</div>
+              </div>
             </div>
-            <div>
-              <div className="font-poppins" style={{ fontSize: 16, fontWeight: 700 }}>LeetCode Profile</div>
-              <div className="font-inter" style={{ fontSize: 12, color: '#718096' }}>@jall_patel</div>
-            </div>
+            <a
+              href="https://leetcode.com/u/jall_patel/"
+              target="_blank"
+              rel="noreferrer"
+              className="font-inter"
+              style={{
+                fontSize: 12,
+                color: '#63b3ed',
+                textDecoration: 'none',
+                padding: '6px 12px',
+                borderRadius: 8,
+                background: 'rgba(99, 179, 237, 0.08)',
+                border: '1px solid rgba(99, 179, 237, 0.2)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 4
+              }}
+            >
+              Verify Profile ↗
+            </a>
           </div>
 
           {/* Total */}

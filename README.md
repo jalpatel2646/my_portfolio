@@ -99,7 +99,7 @@ jal-portfolio/
 │   │   ├── HackathonProjects.jsx # High-velocity hackathon live builds
 │   │   ├── Hackathons.jsx      # Hackathon milestones & timeline
 │   │   ├── FigmaDesigns.jsx    # UI/UX interactive Figma prototypes
-│   │   ├── Achievements.jsx    # LeetCode 170+ milestones & interactive cards
+│   │   ├── Achievements.jsx    # LeetCode 235+ milestones & interactive cards
 │   │   ├── ProblemSolving.jsx  # Algorithmic & data structures profile
 │   │   ├── Experience.jsx      # Career & practical development timeline
 │   │   ├── Contact.jsx         # Direct outreach and contact form

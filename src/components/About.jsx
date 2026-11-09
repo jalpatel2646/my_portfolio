@@ -98,7 +98,7 @@ export default function About() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 14, marginTop: 12 }}>
             {[
               { num: '10+', label: 'Shipped Builds', sub: 'Full Stack & Frontend' },
-              { num: '170+', label: 'LeetCode Solved', sub: 'Data Structures & Algo' },
+              { num: '235', label: 'LeetCode Solved', sub: '178 Easy · 53 Med · 4 Hard' },
               { num: '4+', label: 'Hackathons', sub: 'SIH & Fast Prototypes' },
               { num: '100%', label: 'Responsive', sub: 'Mobile to Desktop' },
             ].map(stat => (

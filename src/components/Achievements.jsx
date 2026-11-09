@@ -10,8 +10,8 @@ const achievements = [
     linkLabel: 'View Builds ↗'
   },
   {
-    title: 'Solved 170+ LeetCode Problems',
-    description: 'Strengthened problem-solving skills, data structures, and algorithmic thinking',
+    title: 'Solved 235 LeetCode Problems',
+    description: 'Active problem solver across 178 Easy, 53 Medium, and 4 Hard DSA algorithmic challenges',
     icon: '💻',
     link: 'https://leetcode.com/u/jall_patel/',
     external: true,
