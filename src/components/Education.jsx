@@ -5,16 +5,17 @@ const entries = [
   {
     icon: '🎓',
     year: '2024 — Present',
-    degree: 'Bachelor of Technology',
+    degree: 'Bachelor of Technology in Computer Science & Engineering',
     institution: 'Swaminarayan University, Kalol, Gujarat',
-    desc: 'Focus on Computer Science and Engineering — building a strong foundation in algorithms, data structures, and modern software development.',
+    desc: 'Deep focus on core computer science foundations, algorithms, modern databases, and scalable software systems.',
+    coursework: ['Data Structures & Algorithms (DSA)', 'Database Management Systems (DBMS)', 'Object-Oriented Programming (OOP)', 'PostgreSQL & SQL'],
   },
   {
     icon: '📚',
     year: 'Completed 2024',
-    degree: 'Higher Secondary Education',
+    degree: 'Higher Secondary Education (Science & Mathematics)',
     institution: 'Vidya Mandir Trust, Palanpur',
-    desc: 'Strong academic foundation with a focus on science and mathematics, laying the groundwork for engineering studies.',
+    desc: 'Strong academic foundation with a focus on science and advanced mathematics, laying the groundwork for engineering studies.',
   },
 ]
 
@@ -54,6 +55,27 @@ export default function Education() {
               <div className="font-poppins" style={{ fontSize: 17, fontWeight: 700, marginBottom: 5 }}>{e.degree}</div>
               <div style={{ fontSize: 13.5, color: '#718096', marginBottom: 10 }}>{e.institution}</div>
               <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', lineHeight: 1.65 }}>{e.desc}</div>
+              {e.coursework && (
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 14 }}>
+                  {e.coursework.map(c => (
+                    <span
+                      key={c}
+                      className="font-inter"
+                      style={{
+                        fontSize: 11.5,
+                        fontWeight: 500,
+                        padding: '4px 10px',
+                        borderRadius: 8,
+                        background: 'rgba(99, 179, 237, 0.08)',
+                        color: '#90cdf4',
+                        border: '1px solid rgba(99, 179, 237, 0.2)'
+                      }}
+                    >
+                      {c}
+                    </span>
+                  ))}
+                </div>
+              )}
             </motion.div>
           </motion.div>
         ))}
