@@ -91,7 +91,9 @@ const projects = [
   {
     name: 'Shoes',
     emoji: '',
-    image: '',
+    image: 'https://i.pinimg.com/1200x/d1/19/1f/d1191f1e9870d2920d6d95ce014a8ed7.jpg',
+    imageStyle: { objectFit: 'cover', objectPosition: 'top center' },
+    cardHeight: 280,
     live: 'https://precious-platypus-02be70.netlify.app',
     code: '',
     youtube: '',
