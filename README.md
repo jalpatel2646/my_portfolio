@@ -165,7 +165,7 @@ I'm always eager to collaborate on ambitious software products, contribute to hi
 - **GitHub**: [@jalpatel2646](https://github.com/jalpatel2646)
 - **LeetCode**: [@jall_patel](https://leetcode.com/u/jall_patel/)
 - **X / Twitter**: [@JalPatel97246](https://x.com/JalPatel97246)
-- **Email**: [jalpatel2646@gmail.com](mailto:jalpatel2646@gmail.com)
+- **Email**: [jal.h.patel.cg@gmail.com](mailto:jal.h.patel.cg@gmail.com)
 
 ---
 

@@ -69,10 +69,15 @@ export default function Contact() {
             <div className="font-poppins" style={{ fontSize: 22, fontWeight: 800, marginBottom: 24 }}>Jal Patel</div>
 
             {contactItems.map((item) => (
-              <motion.div
+              <motion.a
                 key={item.label}
+                href={
+                  item.label === 'Email' ? ('mailto:' + item.value) :
+                  item.label === 'Phone' ? ('tel:' + item.value.replace(/\s+/g, '')) :
+                  undefined
+                }
                 whileHover={{ borderColor: 'rgba(99,179,237,0.28)' }}
-                style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 14, padding: '13px 14px', background: 'rgba(255,255,255,0.03)', borderRadius: 12, border: '1px solid rgba(255,255,255,0.05)', transition: 'border-color 0.2s', overflow: 'hidden' }}
+                style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 14, padding: '13px 14px', background: 'rgba(255,255,255,0.03)', borderRadius: 12, border: '1px solid rgba(255,255,255,0.05)', transition: 'border-color 0.2s', overflow: 'hidden', textDecoration: 'none', color: 'inherit', cursor: item.label !== 'Location' ? 'pointer' : 'default' }}
               >
                 <div style={{ width: 38, height: 38, borderRadius: 9, background: 'linear-gradient(135deg,rgba(102,126,234,0.18),rgba(183,148,244,0.12))', border: '1px solid rgba(102,126,234,0.22)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 17, flexShrink: 0 }}>
                   {item.icon}
@@ -81,7 +86,7 @@ export default function Contact() {
                   <div style={{ fontSize: 11, color: '#718096', letterSpacing: '0.07em', textTransform: 'uppercase' }}>{item.label}</div>
                   <div style={{ fontSize: 13.5, fontWeight: 500, marginTop: 2, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{item.value}</div>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
 
             {/* Socials — 2-per-row on mobile via .social-buttons-grid */}
