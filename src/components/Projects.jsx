@@ -192,7 +192,9 @@ function ProjectModal({ project, onClose }) {
         {project.image ? (
             <img src={project.image} alt={project.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', ...(project.imageStyle || {}) }} loading="lazy" />
           ) : (
-            <span style={{ fontSize: 80 }}>{project.emoji}</span>
+            <div style={{ width: 80, height: 80, borderRadius: 20, background: 'rgba(168,85,247,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#c084fc" strokeWidth="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            </div>
           )}
           <button 
             onClick={onClose}
@@ -314,7 +316,9 @@ function ProjectCard({ project, onClick, featured = false, className = '' }) {
             loading="lazy" 
           />
         ) : (
-          <span style={{ filter: 'drop-shadow(0 4px 16px rgba(0,0,0,0.3))' }}>{project.emoji}</span>
+          <div style={{ width: 64, height: 64, borderRadius: 16, background: 'rgba(168,85,247,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#c084fc" strokeWidth="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+          </div>
         )}
         
         {/* Dark overlay on hover */}

@@ -6,8 +6,13 @@ const certifications = [
     title: 'Sangam University Certification',
     issuer: 'Sangam University',
     date: '2026',
-    desc: 'Certification from Sangam University.',
-    icon: '🎓',
+    desc: 'Demonstrated hands-on engineering and software design competency through accredited university evaluation.',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+        <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+      </svg>
+    ),
     link: 'https://kommodo.ai/i/8otj1o61yieDYt7sUvXS'
   },
   {
@@ -15,7 +20,12 @@ const certifications = [
     issuer: 'Artpark',
     date: '2026',
     desc: 'Engineered rapid interactive software prototypes emphasizing user-centric workflows and client-side responsiveness.',
-    icon: '🏆',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="8" r="7"></circle>
+        <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+      </svg>
+    ),
     link: 'https://kommodo.ai/i/xTxWWQvnvRFVXlEgRol0'
   },
   {
@@ -23,7 +33,13 @@ const certifications = [
     issuer: 'Data Sprint',
     date: '2026',
     desc: 'Architected data-driven dashboard interfaces and visualization pipelines for structured dataset exploration.',
-    icon: '📊',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="18" y1="20" x2="18" y2="10"></line>
+        <line x1="12" y1="20" x2="12" y2="4"></line>
+        <line x1="6" y1="20" x2="6" y2="14"></line>
+      </svg>
+    ),
     link: 'https://kommodo.ai/i/igqzpD6xuNyK6wPLoTza'
   },
   {
@@ -31,7 +47,11 @@ const certifications = [
     issuer: 'Blueprint',
     date: '2026',
     desc: 'Designed modular full-stack system architectures under high-pressure hackathon sprint deadlines with modern React & APIs.',
-    icon: '🚀',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f472b6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+      </svg>
+    ),
     link: 'https://kommodo.ai/i/0CkN9eBefuNo47j4Iiel'
   }
 ]
@@ -59,7 +79,7 @@ export default function Certifications() {
               style={{ borderRadius: 16, padding: '28px 24px', height: '100%', display: 'flex', flexDirection: 'column', transition: 'all 0.3s' }}
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 20 }}>
-                <div style={{ width: 44, height: 44, borderRadius: 12, background: 'linear-gradient(135deg,#667eea,#764ba2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, border: '2px solid rgba(99,179,237,0.3)' }}>
+                <div style={{ width: 42, height: 42, borderRadius: 12, background: 'rgba(168,85,247,0.14)', border: '1px solid rgba(168,85,247,0.28)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   {cert.icon}
                 </div>
                 <div className="font-inter" style={{ fontSize: 11.5, color: '#63b3ed', letterSpacing: '0.06em', background: 'rgba(99,179,237,0.1)', padding: '4px 10px', borderRadius: 12, fontWeight: 500 }}>

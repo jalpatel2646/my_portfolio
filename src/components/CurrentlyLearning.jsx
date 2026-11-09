@@ -28,7 +28,7 @@ export default function CurrentlyLearning() {
       <div style={{ textAlign: 'center', marginBottom: 60 }}>
         <SectionLabel>Always Growing</SectionLabel>
         <SectionTitle>
-          Currently <span className="gradient-text-pink">Learning</span> 📚
+          Currently <span className="gradient-text-pink">Learning</span>
         </SectionTitle>
         <p style={{ color: '#94a3b8', fontSize: 16, maxWidth: 600, margin: '16px auto 0', lineHeight: 1.6 }}>
           Technology moves fast. Here’s what I’m actively exploring and building with right now to expand my horizons.

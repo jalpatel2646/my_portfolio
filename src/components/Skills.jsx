@@ -75,7 +75,7 @@ export default function Skills() {
       <div style={{ textAlign: 'center', marginBottom: 60 }}>
         <SectionLabel>Expertise</SectionLabel>
         <SectionTitle>
-          Skills & <span className="gradient-text-cyan">Technologies</span> 🔧
+          Skills & <span className="gradient-text-cyan">Technologies</span>
         </SectionTitle>
         <p style={{ color: '#94a3b8', fontSize: 16, maxWidth: 600, margin: '16px auto 0', lineHeight: 1.6 }}>
           A comprehensive toolkit of modern technologies and frameworks that I use to bring ideas to life.

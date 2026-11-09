@@ -3,7 +3,12 @@ import SectionWrapper, { SectionLabel, SectionTitle } from './SectionWrapper'
 
 const entries = [
   {
-    icon: '🎓',
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#93c5fd" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+        <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+      </svg>
+    ),
     year: '2025 — 2029',
     degree: 'Bachelor of Technology in Computer Science & Engineering',
     institution: 'Swaminarayan University, Kalol, Gujarat',
@@ -11,7 +16,12 @@ const entries = [
     coursework: ['Data Structures & Algorithms (DSA)', 'Database Management Systems (DBMS)', 'Object-Oriented Programming (OOP)', 'PostgreSQL & SQL'],
   },
   {
-    icon: '📚',
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c084fc" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+      </svg>
+    ),
     year: 'Completed 2024',
     degree: 'Higher Secondary Education (Science & Mathematics)',
     institution: 'Vidya Mandir Trust, Palanpur',
@@ -41,7 +51,7 @@ export default function Education() {
             style={{ display: 'flex', gap: 28, marginBottom: 32 }}
           >
             {/* Dot */}
-            <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'linear-gradient(135deg,#667eea,#764ba2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18, flexShrink: 0, border: '2px solid rgba(99,179,237,0.3)', zIndex: 1 }}>
+            <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'rgba(18, 12, 32, 0.95)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1.5px solid rgba(168, 85, 247, 0.45)', boxShadow: '0 0 16px rgba(168,85,247,0.2)', zIndex: 1 }}>
               {e.icon}
             </div>
 

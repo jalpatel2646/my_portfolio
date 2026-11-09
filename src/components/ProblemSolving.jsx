@@ -172,8 +172,12 @@ export default function ProblemSolving() {
           </div>
 
           {/* Ranking */}
-          <div style={{ textAlign: 'center', fontSize: 12.5, color: '#718096', padding: 10, background: 'rgba(255,255,255,0.03)', borderRadius: 8, border: '1px solid rgba(255,255,255,0.06)' }}>
-            🏆 Ranking: Top {stats.ranking}
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, fontSize: 12.5, color: '#94a3b8', padding: 10, background: 'rgba(255,255,255,0.03)', borderRadius: 8, border: '1px solid rgba(255,255,255,0.06)' }}>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="8" r="7"></circle>
+              <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+            </svg>
+            Global Ranking: <span style={{ color: '#e2e8f0', fontWeight: 600 }}>Top {stats.ranking}</span>
           </div>
         </motion.div>
 
