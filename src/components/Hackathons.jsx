@@ -38,8 +38,8 @@ const hackathons = [
     name: 'Artpark ProtoDash Challenge',
     role: 'Participant',
     project: 'ProtoDash',
-    desc: 'Participated in the Artpark ProtoDash Challenge.',
-    tags: ['Innovation', 'Prototyping'],
+    desc: 'Engineered high-velocity rapid software prototypes solving real-world product workflows with responsive UI and optimized client-side state.',
+    tags: ['Rapid Prototyping', 'React', 'UI Architecture', 'Innovation'],
     date: '2026',
     gradient: 'linear-gradient(135deg, rgba(251,194,235,0.1), rgba(161,140,209,0.14))',
     projectLink: ''
@@ -48,8 +48,8 @@ const hackathons = [
     name: 'Data Sprint 2026',
     role: 'Participant',
     project: 'Data Sprint',
-    desc: 'Participated in the Data Sprint 2026.',
-    tags: ['Data Science', 'Machine Learning'],
+    desc: 'Built data-driven web dashboards processing structured data sets with interactive visual charts, state management, and real-time filtering.',
+    tags: ['Data Analytics', 'Dashboards', 'React', 'API Integration'],
     date: '2026',
     gradient: 'linear-gradient(135deg, rgba(99,179,237,0.1), rgba(160,174,192,0.1))',
     projectLink: ''
@@ -58,8 +58,8 @@ const hackathons = [
     name: 'Blueprint - 2026',
     role: 'Participant',
     project: 'Blueprint',
-    desc: 'Participated in the Blueprint - 2026 hackathon.',
-    tags: ['Innovation', 'Development'],
+    desc: 'Spearheaded full-stack product scaffolding establishing clean component hierarchies, asynchronous API pipelines, and responsive design systems.',
+    tags: ['Full Stack', 'System Architecture', 'React', 'Node.js'],
     date: '2026',
     gradient: 'linear-gradient(135deg, rgba(161,140,209,0.14), rgba(102,126,234,0.18))',
     projectLink: ''

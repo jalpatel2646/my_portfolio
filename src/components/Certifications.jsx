@@ -14,7 +14,7 @@ const certifications = [
     title: 'Artpark ProtoDash Challenge',
     issuer: 'Artpark',
     date: '2026',
-    desc: 'Participation and completion of the Artpark ProtoDash Challenge.',
+    desc: 'Engineered rapid interactive software prototypes emphasizing user-centric workflows and client-side responsiveness.',
     icon: '🏆',
     link: 'https://kommodo.ai/i/xTxWWQvnvRFVXlEgRol0'
   },
@@ -22,7 +22,7 @@ const certifications = [
     title: 'Data Sprint 2026',
     issuer: 'Data Sprint',
     date: '2026',
-    desc: 'Participation and completion of the Data Sprint 2026 hackathon.',
+    desc: 'Architected data-driven dashboard interfaces and visualization pipelines for structured dataset exploration.',
     icon: '📊',
     link: 'https://kommodo.ai/i/igqzpD6xuNyK6wPLoTza'
   },
@@ -30,7 +30,7 @@ const certifications = [
     title: 'Blueprint - 2026',
     issuer: 'Blueprint',
     date: '2026',
-    desc: 'Participation and completion of the Blueprint - 2026 hackathon.',
+    desc: 'Designed modular full-stack system architectures under high-pressure hackathon sprint deadlines with modern React & APIs.',
     icon: '🚀',
     link: 'https://kommodo.ai/i/0CkN9eBefuNo47j4Iiel'
   }

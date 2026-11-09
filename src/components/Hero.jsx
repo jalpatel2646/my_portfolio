@@ -122,7 +122,7 @@ export default function Hero() {
             letterSpacing: '0.04em',
           }}
         >
-          Available for Opportunities <span style={{ color: '#475569', margin: '0 4px' }}>•</span> <span style={{ color: '#c084fc', fontWeight: 600 }}>Full Stack Developer</span>
+          Open for SDE / Full-Stack Internships & Opportunities <span style={{ color: '#475569', margin: '0 4px' }}>•</span> <span style={{ color: '#c084fc', fontWeight: 600 }}>Full Stack Developer</span>
         </span>
       </motion.div>
 

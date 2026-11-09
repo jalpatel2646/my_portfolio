@@ -14,7 +14,7 @@ Crafting high-performance, architecturally sound digital products with modern Re
 <br />
 
 ```
-🟢 Status: Available for Full-Stack Roles, Hackathons & Select Freelance Engagements
+🟢 Status: Open for SDE / Full-Stack Internships, Hackathons & Select Engagements
 📍 Location: Gujarat, India (Open to Remote & Relocation)
 ```
 
