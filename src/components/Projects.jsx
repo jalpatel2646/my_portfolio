@@ -74,6 +74,8 @@ const projects = [
     name: 'Instagram Portfolio / Reel Creator Portfolio',
     emoji: '🎬',
     image: 'https://i.pinimg.com/1200x/c4/28/3d/c4283d11595ae43680ab3e3508874258.jpg',
+    imageStyle: { objectFit: 'cover', objectPosition: 'top center' },
+    cardHeight: 280,
     live: 'https://darling-blini-47b4d8.netlify.app',
     code: '',
     youtube: '',
@@ -162,9 +164,9 @@ function ProjectModal({ project, onClose }) {
         }}
       >
         {/* Modal Header/Image */}
-        <div className="project-modal-header" style={{ position: 'relative', height: 350, background: project.gradient, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', flexShrink: 0 }}>
+        <div className="project-modal-header" style={{ position: 'relative', height: project.cardHeight ? project.cardHeight + 130 : 350, background: project.gradient, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', flexShrink: 0 }}>
           {project.image ? (
-            <img src={project.image} alt={project.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
+            <img src={project.image} alt={project.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', ...(project.imageStyle || {}) }} loading="lazy" />
           ) : (
             <span style={{ fontSize: 80 }}>{project.emoji}</span>
           )}
@@ -250,8 +252,8 @@ function ProjectCard({ project, onClick, featured = false }) {
       <div 
         className="project-image-container"
         style={{ 
-          height: featured ? '100%' : 220, 
-          minHeight: 220,
+          height: featured ? '100%' : (project.cardHeight || 220), 
+          minHeight: project.cardHeight || 220,
           flex: featured ? '1.2' : 'none',
           background: project.gradient, 
           display: 'flex', 
@@ -267,7 +269,7 @@ function ProjectCard({ project, onClick, featured = false }) {
             src={project.image} 
             alt={project.name} 
             className="project-img"
-            style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)' }} 
+            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)', ...(project.imageStyle || {}) }} 
             loading="lazy" 
           />
         ) : (
