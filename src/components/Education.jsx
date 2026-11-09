@@ -4,7 +4,7 @@ import SectionWrapper, { SectionLabel, SectionTitle } from './SectionWrapper'
 const entries = [
   {
     icon: '🎓',
-    year: '2024 — Present',
+    year: '2025 — 2029',
     degree: 'Bachelor of Technology in Computer Science & Engineering',
     institution: 'Swaminarayan University, Kalol, Gujarat',
     desc: 'Deep focus on core computer science foundations, algorithms, modern databases, and scalable software systems.',
