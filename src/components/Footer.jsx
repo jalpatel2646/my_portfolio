@@ -69,7 +69,15 @@ export default function Footer() {
           </div>
         </div>
 
-
+        {/* Bottom copyright row */}
+        <div style={{ paddingTop: 24, borderTop: '1px solid rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
+          <p className="font-inter" style={{ fontSize: 13, color: '#64748b', margin: 0 }}>
+            © {new Date().getFullYear()} Jal Patel. All rights reserved.
+          </p>
+          <p className="font-inter" style={{ fontSize: 13, color: '#64748b', margin: 0 }}>
+            Designed & Built with <span style={{ color: '#22d3ee' }}>React</span> & <span style={{ color: '#38bdf8' }}>Tailwind CSS</span>
+          </p>
+        </div>
       </div>
     </footer>
   )
